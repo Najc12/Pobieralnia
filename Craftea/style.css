@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* TŁO GAMINGOWE */
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0,255,255,0.35), transparent 25%),
+    radial-gradient(circle at 80% 30%, rgba(255,0,255,0.35), transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(0,128,255,0.35), transparent 30%),
+    linear-gradient(135deg, #050816, #0d1025, #111827, #0b0f1f);
+
+  background-attachment: fixed;
+}
+
+/* GRID */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* NAVBAR */
+.navbar {
+  height: 100px;
+  width: 100%;
+
+  background:
+    linear-gradient(to bottom, #fff 0%, #eee 45%, #ff003c 55%, #990000 100%);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 40px;
+
+  position: sticky;
+  top: 0;
+
+  border-bottom: 3px solid cyan;
+
+  box-shadow:
+    0 0 15px red,
+    0 0 30px red,
+    0 0 40px cyan;
+}
+
+/* LOGO */
+.logo h1 {
+  color: black;
+  font-size: 38px;
+
+  text-shadow:
+    0 0 10px white,
+    0 0 20px red;
+}
+
+/* MENU */
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+nav a:hover {
+  transform: scale(1.1);
+  color: white;
+  text-shadow: 0 0 10px cyan;
+}
+
+/* SEKCJE */
+.section {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 25px;
+  padding: 50px;
+}
+
+/* TYTUŁY */
+.section h2 {
+  font-size: 55px;
+  text-shadow: 0 0 15px cyan;
+}
+
+/* TEKST */
+.section p {
+  font-size: 20px;
+  color: #ddd;
+}
+
+/* BOX */
+.box {
+  background: rgba(20, 20, 20, 0.75);
+
+  border: 2px solid cyan;
+  padding: 25px 50px;
+
+  border-radius: 20px;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 0 15px cyan;
+  transition: 0.3s;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px cyan;
+}
+
+.box a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.box a:hover {
+  color: cyan;
+}
+
+/* STOPKA */
+footer {
+  text-align: center;
+  padding: 20px;
+
+  background: rgba(0,0,0,0.6);
+  border-top: 2px solid cyan;
+
+  font-size: 18px;
+  text-shadow: 0 0 10px cyan;
+}
