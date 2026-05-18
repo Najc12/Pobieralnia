@@ -59,14 +59,87 @@ body::before {
     0 0 40px cyan;
 }
 
-/* LOGO */
+/* LOGO GOTHIC */
 .logo h1 {
-  color: black;
-  font-size: 38px;
+  font-family: 'MedievalSharp', cursive;
+
+  color: #111;
+
+  font-size: 48px;
+
+  letter-spacing: 3px;
 
   text-shadow:
-    0 0 10px white,
-    0 0 20px red;
+  0 0 3px white,
+  0 0 6px red,
+  0 0 12px darkred,
+  1px 1px 0 black;
+
+  transition: 0.3s;
+}
+
+/* HOVER */
+.logo h1:hover {
+  transform: scale(1.05);
+
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px red,
+    0 0 40px red;
+}
+/* HERO STRONA GŁÓWNA */
+#home h2 {
+  font-family: 'MedievalSharp', cursive;
+
+  font-size: 110px;
+
+  letter-spacing: 5px;
+
+  color: white;
+
+  text-shadow:
+  0 0 4px cyan,
+  0 0 8px cyan,
+  0 0 16px blue,
+  2px 2px 0 black;
+
+  animation: glow 3s infinite alternate;
+}
+
+/* OPIS */
+#home p {
+  font-size: 30px;
+
+  font-weight: bold;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  text-shadow:
+  0 0 2px cyan,
+  0 0 4px blue;
+
+  max-width: 900px;
+}
+
+/* ANIMACJA */
+@keyframes glow {
+
+  from {
+    text-shadow:
+      0 0 4px cyan,
+      0 0 4px cyan,
+      0 0 8px blue;
+  }
+
+  to {
+    text-shadow:
+      0 0 4px cyan,
+      0 0 4px cyan,
+      0 0 8px blue;
+  }
+
 }
 
 /* MENU */
@@ -549,5 +622,132 @@ nav a,
   .box {
     width: 100%;
     padding: 15px;
+  }
+}
+/* GRID AKTUALNOŚCI */
+.news-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 25px;
+
+  margin-top: 40px;
+
+  align-items: start;
+}
+
+/* KAFELKI */
+.news-card {
+  background: rgba(20,20,20,0.75);
+
+  border: 2px solid cyan;
+
+  border-radius: 20px;
+
+  padding: 25px;
+
+  box-shadow: 0 0 15px cyan;
+
+  transition: 0.3s;
+
+  height: fit-content;
+}
+
+/* HOVER */
+.news-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 0 25px cyan,
+    0 0 50px cyan;
+}
+
+/* TYTUŁ */
+.news-card h3 {
+  font-size: 24px;
+
+  margin-bottom: 15px;
+
+  color: white;
+
+  text-shadow: 0 0 10px cyan;
+}
+
+/* KRÓTKI OPIS */
+.short-text {
+  color: #ddd;
+
+  margin-bottom: 20px;
+}
+
+/* UKRYTA TREŚĆ */
+.full-text {
+  max-height: 0;
+
+  overflow: hidden;
+
+  transition: max-height 0.4s ease;
+
+  color: #ccc;
+}
+
+/* OTWARCIE */
+.news-card.active .full-text {
+  max-height: 300px;
+}
+
+/* PRZYCISK */
+.news-button {
+  margin-top: 20px;
+
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: rgba(0,255,255,0.15);
+
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  border: 2px solid cyan;
+
+  transition: 0.3s;
+}
+
+/* HOVER */
+.news-button:hover {
+  background: cyan;
+
+  color: black;
+
+  box-shadow:
+    0 0 20px cyan;
+}
+
+/* RESPONSYWNOŚĆ */
+@media (max-width: 1200px) {
+  .news-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .news-grid {
+    grid-template-columns: 1fr;
   }
 }
