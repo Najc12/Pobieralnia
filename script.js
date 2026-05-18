@@ -50,3 +50,21 @@ lightbox.addEventListener("click", (e) => {
     lightbox.style.display = "none";
   }
 });
+// AKTUALNOŚCI
+document.querySelectorAll(".news-button").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const card = button.parentElement;
+
+    card.classList.toggle("active");
+
+    if (card.classList.contains("active")) {
+      button.textContent = "Ukryj";
+    } else {
+      button.textContent = "Czytaj więcej";
+    }
+
+  });
+
+});
