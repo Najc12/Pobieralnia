@@ -51,6 +51,8 @@ body::before {
   position: sticky;
   top: 0;
 
+  z-index: 9999;
+
   border-bottom: 3px solid cyan;
 
   box-shadow:
