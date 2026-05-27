@@ -52,7 +52,7 @@ body::before {
   top: 0;
 
   z-index: 9999;
-
+  
   border-bottom: 3px solid cyan;
 
   box-shadow:
@@ -752,4 +752,857 @@ nav a,
   .news-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* OGLĄDANKO */
+
+.watch-login {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 350px;
+}
+
+.watch-login input {
+  padding: 15px;
+
+  border-radius: 12px;
+
+  border: 2px solid cyan;
+
+  background: rgba(0,0,0,0.5);
+
+  color: white;
+
+  font-size: 18px;
+}
+
+.watch-login button {
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: cyan;
+
+  color: black;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.watch-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+
+  margin-top: 40px;
+}
+
+.watch-grid iframe {
+  width: 100%;
+  height: 350px;
+
+  border: 2px solid cyan;
+
+  border-radius: 20px;
+
+  box-shadow: 0 0 20px cyan;
+}
+
+@media (max-width: 900px) {
+
+  .watch-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* REKRUTACJA */
+
+.recruitment-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+
+  margin-top: 40px;
+}
+
+.recruitment-card {
+  background: rgba(20,20,20,0.75);
+
+  border: 2px solid cyan;
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  box-shadow: 0 0 20px cyan;
+
+  text-align: center;
+}
+
+.recruitment-card h3 {
+  font-size: 28px;
+
+  margin-bottom: 20px;
+
+  text-shadow: 0 0 10px cyan;
+}
+
+.recruit-button {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  padding: 12px 25px;
+
+  border-radius: 12px;
+
+  background: cyan;
+
+  color: black;
+
+  font-weight: bold;
+
+  text-decoration: none;
+
+  border: 2px solid cyan;
+
+  transition: 0.3s;
+}
+
+.recruit-button:hover {
+  background: white;
+
+  box-shadow:
+    0 0 20px cyan;
+}
+
+@media (max-width: 900px) {
+
+  .recruitment-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+/* REKRUTACJA ROZWIJANIE */
+
+.recruitment-card {
+  position: relative;
+}
+
+/* UKRYTY TEKST */
+.recruitment-card .full-text {
+  max-height: 0;
+
+  overflow: hidden;
+
+  transition: max-height 0.4s ease;
+
+  color: #ccc;
+}
+
+/* OTWARCIE */
+.recruitment-card.active .full-text {
+  max-height: 300px;
+}
+
+/* PRZYCISK CZYTAJ WIĘCEJ */
+.recruit-toggle {
+  margin-top: 20px;
+
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: rgba(0,255,255,0.15);
+
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  border: 2px solid cyan;
+
+  transition: 0.3s;
+}
+
+.recruit-toggle:hover {
+  background: cyan;
+
+  color: black;
+
+  box-shadow:
+    0 0 20px cyan;
+}
+
+/* PRZYCISK ZGŁOŚ SIĘ */
+.recruit-button {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  padding: 10px 20px;
+
+  border-radius: 12px;
+
+  background: cyan;
+
+  color: black;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  float: right;
+
+  border: 2px solid cyan;
+
+  transition: 0.3s;
+}
+
+.recruit-button:hover {
+  background: white;
+
+  box-shadow:
+    0 0 20px cyan;
+}
+
+
+
+/* GRID FILMÓW */
+.watch-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 30px;
+
+  margin-top: 40px;
+}
+
+/* KAFEL */
+.watch-card {
+  background: rgba(20,20,20,0.75);
+
+  border: 2px solid cyan;
+
+  border-radius: 20px;
+
+  padding: 20px;
+
+  box-shadow: 0 0 20px cyan;
+
+  transition: 0.3s;
+
+  text-align: center;
+}
+
+/* HOVER */
+.watch-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 0 25px cyan,
+    0 0 50px cyan;
+}
+
+/* PLAKAT */
+.watch-card img {
+  width: 100%;
+
+  height: 420px;
+
+  object-fit: cover;
+
+  border-radius: 15px;
+
+  border: 2px solid cyan;
+
+  margin-bottom: 20px;
+
+  transition: 0.3s;
+}
+
+.watch-card img:hover {
+  transform: scale(1.03);
+
+  box-shadow:
+    0 0 20px cyan,
+    0 0 40px cyan;
+}
+
+/* TYTUŁ */
+.watch-card h3 {
+  font-size: 28px;
+
+  color: white;
+
+  text-shadow: 0 0 10px cyan;
+}
+
+/* RESPONSYWNOŚĆ */
+@media (max-width: 1000px) {
+  .watch-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .watch-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* KAFELKI */
+
+.watch-card {
+  cursor: pointer;
+
+  background: rgba(20,20,20,0.75);
+
+  border: 2px solid cyan;
+
+  border-radius: 20px;
+
+  padding: 20px;
+
+  box-shadow: 0 0 20px cyan;
+
+  transition: 0.3s;
+}
+
+.watch-card:hover {
+  transform: scale(1.03);
+
+  box-shadow:
+    0 0 25px cyan,
+    0 0 50px cyan;
+}
+
+.watch-card img {
+  width: 100%;
+
+  border-radius: 15px;
+
+  border: 2px solid cyan;
+}
+
+.watch-card h3 {
+  margin-top: 15px;
+
+  text-align: center;
+
+  color: white;
+
+  text-shadow: 0 0 10px cyan;
+}
+
+/* POPUP */
+
+.video-popup {
+  display: none;
+
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0,0,0,0.9);
+
+  z-index: 999999;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.video-popup iframe {
+  width: 80%;
+  height: 80%;
+
+  border: 2px solid cyan;
+
+  border-radius: 20px;
+
+  box-shadow: 0 0 30px cyan;
+}
+
+.video-close {
+  position: absolute;
+
+  top: 20px;
+  right: 40px;
+
+  font-size: 50px;
+
+  color: white;
+
+  cursor: pointer;
+}
+/* WYSZUKIWARKA */
+
+.movie-search {
+  width: 100%;
+  max-width: 500px;
+
+  padding: 15px;
+
+  margin-bottom: 30px;
+  margin-left: auto; /* PRZESUWA W PRAWO */
+
+  display: block;
+
+  border-radius: 15px;
+
+  border: 2px solid cyan;
+
+  background: rgba(0,0,0,0.5);
+
+  color: white;
+
+  font-size: 18px;
+
+  outline: none;
+
+  box-shadow: 0 0 15px cyan;
+}
+
+.movie-search:focus {
+  box-shadow:
+    0 0 20px cyan,
+    0 0 40px cyan;
+}
+/* FORMULARZ REKRUTACJI */
+
+.recruit-form {
+
+  width: 100%;
+  max-width: 700px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.recruit-form input,
+.recruit-form textarea,
+.recruit-form select {
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  border: 2px solid cyan;
+
+  background: rgba(0,0,0,0.5);
+
+  color: white;
+
+  font-size: 18px;
+}
+
+.recruit-form textarea {
+
+  min-height: 180px;
+
+  resize: vertical;
+}
+
+.recruit-form button {
+
+  align-self: flex-end;
+
+  padding: 15px 30px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: cyan;
+
+  color: black;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.recruit-form button:hover {
+
+  transform: scale(1.05);
+
+  box-shadow:
+    0 0 20px cyan,
+    0 0 40px cyan;
+}
+/* WYSZUKIWARKA */
+
+.search-wrapper {
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+
+  margin-bottom: 30px;
+}
+
+.movie-search {
+  width: 320px;
+
+  padding: 15px;
+
+  border-radius: 15px;
+
+  border: 2px solid cyan;
+
+  background: rgba(0,0,0,0.5);
+
+  color: white;
+
+  font-size: 18px;
+
+  outline: none;
+
+  box-shadow: 0 0 15px cyan;
+}
+
+/* GRID FILMÓW */
+
+.watch-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 25px;
+}
+
+/* KAFELKI */
+
+.watch-card {
+  background: rgba(20,20,20,0.75);
+
+  border: 2px solid cyan;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  box-shadow: 0 0 15px cyan;
+
+  transition: 0.3s;
+}
+
+.watch-card:hover {
+  transform: scale(1.03);
+
+  box-shadow:
+    0 0 25px cyan,
+    0 0 50px cyan;
+}
+
+/* OBRAZ */
+
+.watch-card img {
+  width: 100%;
+  height: 320px;
+
+  object-fit: cover;
+}
+
+/* TEKST */
+
+.watch-card .text {
+  padding: 15px;
+}
+
+.watch-card h3 {
+  text-align: center;
+
+  color: white;
+
+  text-shadow: 0 0 10px cyan;
+}
+
+/* RESPONSYWNOŚĆ */
+
+@media (max-width: 1200px) {
+  .watch-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .watch-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .watch-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-search {
+    width: 100%;
+  }
+}
+/* ROZWIJANE LINKI */
+
+.movie-links {
+  max-height: 0;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  padding: 0 15px;
+
+  transition: 0.4s ease;
+}
+
+/* AKTYWNY */
+
+.watch-card.active .movie-links {
+  max-height: 300px;
+
+  padding: 15px;
+}
+
+/* LINKI */
+
+.movie-links a {
+  text-decoration: none;
+
+  text-align: center;
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  background: rgba(0,255,255,0.15);
+
+  border: 2px solid cyan;
+
+  color: white;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+/* HOVER */
+
+.movie-links a:hover {
+  background: cyan;
+
+  color: black;
+
+  box-shadow:
+    0 0 20px cyan;
+}
+.movie-links {
+  max-height: 0;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  padding: 0 15px;
+
+  transition: max-height 0.4s ease,
+              padding 0.3s ease;
+}
+
+.watch-card.active .movie-links {
+  max-height: 300px;
+
+  padding: 15px;
+}
+/* =========================
+   GRANKO
+========================= */
+
+.games-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 25px;
+
+  margin-top: 40px;
+}
+
+.game-card {
+  background: rgba(20,20,20,0.75);
+
+  border: 2px solid cyan;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow: 0 0 15px cyan;
+
+  transition: 0.3s;
+}
+
+.game-card:hover {
+  transform: scale(1.03);
+
+  box-shadow:
+    0 0 25px cyan,
+    0 0 50px cyan;
+}
+
+.game-card img {
+  width: 100%;
+  height: 320px;
+
+  object-fit: cover;
+}
+
+.game-card .text {
+  padding: 15px;
+}
+
+.game-card h3 {
+  text-align: center;
+
+  color: white;
+
+  text-shadow: 0 0 10px cyan;
+}
+
+.game-links {
+  padding: 15px;
+}
+
+.game-links a {
+  display: block;
+
+  text-align: center;
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  background: rgba(0,255,255,0.15);
+
+  border: 2px solid cyan;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.game-links a:hover {
+  background: cyan;
+
+  color: black;
+
+  box-shadow:
+    0 0 20px cyan;
+}
+
+/* RESPONSYWNOŚĆ */
+
+@media (max-width: 1200px) {
+  .games-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .games-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* INFO OGLĄDANKO */
+
+.watch-info{
+  max-width: 900px;
+
+  margin-top: -10px;
+  margin-bottom: 30px;
+
+  padding: 20px 30px;
+
+  background: rgba(0,0,0,0.35);
+
+  border: 2px solid cyan;
+
+  border-radius: 20px;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 0 15px rgba(0,255,255,0.4);
+
+  text-align: center;
+}
+
+.watch-info p{
+  color: #d7faff;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  text-shadow:
+    0 0 6px rgba(0,255,255,0.5);
+}
+
+.watch-info p:first-child{
+  margin-bottom: 12px;
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  color: white;
+
+  text-shadow:
+    0 0 10px cyan;
 }
