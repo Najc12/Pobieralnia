@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rekrutacja - Craftea</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+  <div class="logo">
+    <h1>Craftea</h1>
+  </div>
+
+  <nav>
+    <a href="index.html">Strona główna</a>
+    <a href="index.html#news">Aktualności</a>
+    <a href="gallery.html">Galeria</a>
+    <a href="download.html">Pobieralnia</a>
+    <a href="watch.html">Oglądanko</a>
+    <a href="games.html">Granko</a>
+    <a href="index.html#recruitment">Rekrutacja</a>
+    <a href="index.html#contact">Kontakt</a>
+  </nav>
+
+</header>
+
+<section class="section">
+
+  <h2>Ankieta Rekrutacyjna</h2>
+
+  <form id="recruit-form" class="recruit-form">
+
+    <input type="text"
+           id="nick"
+           placeholder="Nick Discord"
+           required>
+
+    <input type="number"
+           id="age"
+           placeholder="Wiek"
+           required>
+
+    <select id="role" required>
+
+      <option value="">Wybierz stanowisko</option>
+      <option>📜Tłumacz📜</option>
+      <option>🎮Tester🎮</option>
+      <option>🐻Pomocnik Moderatora🐻</option>
+      <option>🎤Aktor Głowosy🎤</option>
+      <option>🔣Technik🔢</option>
+    </select>
+
+    <textarea id="job-knowledge"
+              placeholder="Czym zajmuje się stanowisko na jakie aplikujesz?"
+              required></textarea>
+
+    <textarea id="about"
+              placeholder="Napisz coś o sobie"
+              required></textarea>
+
+    <button type="submit">
+      Aplikuj
+    </button>
+
+  </form>
+
+</section>
+
+<script>
+
+const webhook =
+"https://discord.com/api/webhooks/1508925731835478127/vc9QzWvuno1LcHsqfbqgSqJ-Z0a300IchGx6BAdrz8Kb-qhbJNfbBbp_iCXYax2JQzNR";
+
+document
+.getElementById("recruit-form")
+.addEventListener("submit", async (e) => {
+
+  e.preventDefault();
+
+  const nick =
+    document.getElementById("nick").value;
+
+  const age =
+    document.getElementById("age").value;
+
+  const role =
+    document.getElementById("role").value;
+
+  const knowledge =
+    document.getElementById("job-knowledge").value;
+
+  const about =
+    document.getElementById("about").value;
+
+  const message = {
+    content:
+`📨 NOWA REKRUTACJA
+
+👤 Nick: ${nick}
+
+🎂 Wiek: ${age}
+
+🛠 Rola: ${role}
+
+📚 Wiedza o stanowisku:
+${knowledge}
+
+📝 O sobie:
+${about}`
+  };
+
+  try {
+
+    await fetch(webhook, {
+
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json"
+      },
+
+      body: JSON.stringify(message)
+
+    });
+
+    alert("Aplikacja wysłana!");
+
+    document
+      .getElementById("recruit-form")
+      .reset();
+
+  } catch (error) {
+
+    alert("Błąd wysyłania formularza!");
+
+    console.error(error);
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Craftea Snake</title>
+
+<style>
+
+body{
+  margin:0;
+  overflow:hidden;
+  background:#0b0f1f;
+  font-family:Arial;
+  color:white;
+}
+
+canvas{
+  display:block;
+  margin:auto;
+  margin-top:20px;
+
+  border:2px solid cyan;
+
+  box-shadow:
+    0 0 20px cyan,
+    0 0 40px cyan;
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="game" width="1000" height="700"></canvas>
+
+<script>
+
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+
+const grid = 20;
+
+let snake = [
+  {x:200,y:200}
+];
+
+let dx = grid;
+let dy = 0;
+
+let food = {
+  x:400,
+  y:300
+};
+
+let score = 0;
+
+let highscore =
+localStorage.getItem("snakeHighscore") || 0;
+
+/* STEROWANIE */
+
+document.addEventListener("keydown", e => {
+
+  if(e.key === "ArrowUp" && dy === 0){
+    dx = 0;
+    dy = -grid;
+  }
+
+  if(e.key === "ArrowDown" && dy === 0){
+    dx = 0;
+    dy = grid;
+  }
+
+  if(e.key === "ArrowLeft" && dx === 0){
+    dx = -grid;
+    dy = 0;
+  }
+
+  if(e.key === "ArrowRight" && dx === 0){
+    dx = grid;
+    dy = 0;
+  }
+
+});
+
+/* LOSOWE JEDZENIE */
+
+function randomFood(){
+
+  food.x =
+    Math.floor(Math.random() * 50) * grid;
+
+  food.y =
+    Math.floor(Math.random() * 35) * grid;
+
+}
+
+/* RESET */
+
+function resetGame(){
+
+  snake = [{x:200,y:200}];
+
+  dx = grid;
+  dy = 0;
+
+  score = 0;
+
+  randomFood();
+
+}
+
+/* GRA */
+
+function gameLoop(){
+
+  requestAnimationFrame(gameLoop);
+
+}
+
+setInterval(drawGame, 100);
+
+function drawGame(){
+
+  /* TŁO */
+
+  ctx.fillStyle = "#0b0f1f";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  /* NOWA GŁOWA */
+
+  const head = {
+    x: snake[0].x + dx,
+    y: snake[0].y + dy
+  };
+
+  snake.unshift(head);
+
+  /* JEDZENIE */
+
+  if(
+    head.x === food.x &&
+    head.y === food.y
+  ){
+
+    score++;
+
+    if(score > highscore){
+
+      highscore = score;
+
+      localStorage.setItem(
+        "snakeHighscore",
+        highscore
+      );
+
+    }
+
+    randomFood();
+
+  } else {
+
+    snake.pop();
+
+  }
+
+  /* ŚCIANY */
+
+  if(
+    head.x < 0 ||
+    head.y < 0 ||
+    head.x >= canvas.width ||
+    head.y >= canvas.height
+  ){
+
+    alert("Koniec gry!");
+
+    resetGame();
+
+  }
+
+  /* KOLIZJA ZE SOBĄ */
+
+  for(let i=1;i<snake.length;i++){
+
+    if(
+      head.x === snake[i].x &&
+      head.y === snake[i].y
+    ){
+
+      alert("Zjadłeś siebie!");
+
+      resetGame();
+
+    }
+
+  }
+
+  /* JEDZENIE */
+
+  ctx.fillStyle = "red";
+
+  ctx.shadowColor = "red";
+  ctx.shadowBlur = 20;
+
+  ctx.fillRect(
+    food.x,
+    food.y,
+    grid,
+    grid
+  );
+
+  /* WĄŻ */
+
+  snake.forEach((part,index)=>{
+
+    ctx.fillStyle =
+      index === 0 ? "cyan" : "#00ffee";
+
+    ctx.shadowColor = "cyan";
+    ctx.shadowBlur = 20;
+
+    ctx.fillRect(
+      part.x,
+      part.y,
+      grid,
+      grid
+    );
+
+  });
+
+  /* WYNIK */
+
+  ctx.shadowBlur = 0;
+
+  ctx.fillStyle = "white";
+
+  ctx.font = "30px Arial";
+
+  ctx.fillText(
+    "Wynik: " + score,
+    20,
+    40
+  );
+
+  ctx.fillText(
+    "Rekord: " + highscore,
+    20,
+    80
+  );
+
+}
+
+gameLoop();
+
+</script>
+
+</body>
+</html>

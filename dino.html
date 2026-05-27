@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Craftea Dino</title>
+
+<style>
+
+/* BODY */
+
+body{
+  margin:0;
+  overflow:hidden;
+
+  background:
+  linear-gradient(
+    180deg,
+    #09111f,
+    #050816
+  );
+
+  font-family:Arial,sans-serif;
+}
+
+/* CANVAS */
+
+canvas{
+  display:block;
+}
+
+/* MENU */
+
+.game-menu{
+
+  position:fixed;
+
+  inset:0;
+
+  display:flex;
+  flex-direction:column;
+
+  justify-content:center;
+  align-items:center;
+
+  gap:30px;
+
+  background:
+  rgba(5,8,22,0.92);
+
+  z-index:999;
+}
+
+/* TYTUŁ */
+
+.game-title{
+
+  font-size:90px;
+
+  color:white;
+
+  text-shadow:
+    0 0 10px cyan,
+    0 0 25px cyan,
+    0 0 50px cyan;
+}
+
+/* BUTTON */
+
+.game-btn{
+
+  padding:20px 60px;
+
+  border:none;
+
+  border-radius:20px;
+
+  background:cyan;
+
+  color:black;
+
+  font-size:30px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.game-btn:hover{
+
+  transform:scale(1.08);
+
+  box-shadow:
+    0 0 20px cyan,
+    0 0 50px cyan;
+}
+
+/* HUD */
+
+.hud{
+
+  position:fixed;
+
+  top:20px;
+  left:20px;
+
+  display:flex;
+
+  gap:20px;
+
+  z-index:50;
+}
+
+.hud-box{
+
+  padding:15px 25px;
+
+  border-radius:15px;
+
+  background:
+  rgba(0,0,0,0.5);
+
+  border:2px solid cyan;
+
+  color:white;
+
+  font-size:22px;
+
+  box-shadow:
+    0 0 15px cyan;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+
+<div id="menu" class="game-menu">
+
+  <h1 class="game-title">
+    Dinoblok
+  </h1>
+
+  <button
+    class="game-btn"
+    onclick="startGame()">
+
+    START
+
+  </button>
+
+</div>
+
+<!-- HUD -->
+
+<div class="hud">
+
+  <div class="hud-box">
+    Wynik:
+    <span id="score">0</span>
+  </div>
+
+  <div class="hud-box">
+    Rekord:
+    <span id="record">0</span>
+  </div>
+
+</div>
+
+<!-- CANVAS -->
+
+<canvas id="game"></canvas>
+
+<script>
+
+/* CANVAS */
+
+const canvas =
+document.getElementById("game");
+
+const ctx =
+canvas.getContext("2d");
+
+/* RESIZE */
+
+function resize(){
+
+  canvas.width =
+  window.innerWidth;
+
+  canvas.height =
+  window.innerHeight;
+
+}
+
+resize();
+
+window.addEventListener(
+  "resize",
+  resize
+);
+
+/* MENU */
+
+let started = false;
+
+/* START */
+
+function startGame(){
+
+  document
+  .getElementById("menu")
+  .style.display = "none";
+
+  started = true;
+
+  resetGame();
+
+}
+
+/* DINO */
+
+let dino = {
+
+  x:150,
+
+  y:0,
+
+  width:70,
+  height:70,
+
+  velocityY:0,
+
+  jumping:false
+
+};
+
+/* GRAWITACJA */
+
+const gravity = 1.1;
+
+/* TABLICE */
+
+let obstacles = [];
+let particles = [];
+let speedLines = [];
+
+/* SCORE */
+
+let score = 0;
+
+let highscore =
+localStorage.getItem(
+  "dinoHighscore"
+) || 0;
+
+/* SPEED */
+
+let speed = 8;
+
+/* SHAKE */
+
+let shake = 0;
+
+/* PODŁOGA */
+
+function groundY(){
+
+  return canvas.height - 250;
+
+}
+
+/* RESET */
+
+function resetGame(){
+
+  obstacles = [];
+
+  particles = [];
+
+  speedLines = [];
+
+  score = 0;
+
+  speed = 8;
+
+  dino.y = groundY();
+
+  dino.velocityY = 0;
+
+  dino.jumping = false;
+
+}
+
+/* SKOK */
+
+document.addEventListener(
+  "keydown",
+  e => {
+
+  if(
+    (
+      e.code === "Space" ||
+      e.code === "ArrowUp"
+    )
+    &&
+    !dino.jumping
+    &&
+    started
+  ){
+
+    dino.velocityY = -24;
+
+    dino.jumping = true;
+
+  }
+
+});
+
+/* PRZESZKODY */
+
+function createObstacle(){
+
+  if(!started) return;
+
+  obstacles.push({
+
+    x:canvas.width,
+
+    y:
+    groundY() +
+    (Math.random()*40),
+
+    width:
+    45 + Math.random()*45,
+
+    height:
+    70 + Math.random()*80
+
+  });
+
+}
+
+/* ODSTĘPY */
+
+function obstacleLoop(){
+
+  createObstacle();
+
+  let nextSpawn =
+  2200 + Math.random()*2500;
+
+  setTimeout(
+    obstacleLoop,
+    nextSpawn
+  );
+
+}
+
+obstacleLoop();
+
+/* KOLIZJA */
+
+function collision(a,b){
+
+  return (
+
+    a.x < b.x + b.width &&
+    a.x + a.width > b.x &&
+    a.y < b.y + b.height &&
+    a.y + a.height > b.y
+
+  );
+
+}
+
+/* GAME OVER */
+
+function endGame(){
+
+  started = false;
+
+  shake = 20;
+
+  document
+  .getElementById("menu")
+  .style.display = "flex";
+
+  document
+  .querySelector(".game-title")
+  .innerText =
+  "GAME OVER";
+
+}
+
+/* UPDATE */
+
+function update(){
+
+  requestAnimationFrame(update);
+
+  /* SHAKE */
+
+  if(shake > 0){
+
+    ctx.setTransform(
+      1,0,0,1,
+      Math.random()*shake - shake/2,
+      Math.random()*shake - shake/2
+    );
+
+    shake *= 0.9;
+
+  } else {
+
+    ctx.setTransform(
+      1,0,0,1,0,0
+    );
+
+  }
+
+  /* TŁO */
+
+  let bg =
+  ctx.createLinearGradient(
+    0,0,
+    0,canvas.height
+  );
+
+  bg.addColorStop(
+    0,
+    "#09111f"
+  );
+
+  bg.addColorStop(
+    1,
+    "#050816"
+  );
+
+  ctx.fillStyle = bg;
+
+  ctx.fillRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
+
+  /* SPEEDLINES */
+
+  if(started){
+
+    speedLines.push({
+
+      x:canvas.width,
+
+      y:
+      Math.random()*
+      canvas.height,
+
+      width:
+      50 +
+      Math.random()*100,
+
+      speed:
+      15 +
+      Math.random()*10
+
+    });
+
+  }
+
+  speedLines.forEach(
+    (line,index)=>{
+
+    line.x -= line.speed;
+
+    ctx.strokeStyle =
+    "rgba(0,255,255,0.15)";
+
+    ctx.lineWidth = 2;
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+      line.x,
+      line.y
+    );
+
+    ctx.lineTo(
+      line.x + line.width,
+      line.y
+    );
+
+    ctx.stroke();
+
+    if(line.x < -200){
+
+      speedLines.splice(
+        index,
+        1
+      );
+
+    }
+
+  });
+
+  /* GRID */
+
+  ctx.strokeStyle =
+  "rgba(0,255,255,0.05)";
+
+  for(
+    let i=0;
+    i<canvas.width;
+    i+=50
+  ){
+
+    ctx.beginPath();
+
+    ctx.moveTo(i,0);
+
+    ctx.lineTo(
+      i,
+      canvas.height
+    );
+
+    ctx.stroke();
+
+  }
+
+  for(
+    let i=0;
+    i<canvas.height;
+    i+=50
+  ){
+
+    ctx.beginPath();
+
+    ctx.moveTo(0,i);
+
+    ctx.lineTo(
+      canvas.width,
+      i
+    );
+
+    ctx.stroke();
+
+  }
+
+  /* PODŁOGA */
+
+  ctx.strokeStyle =
+  "cyan";
+
+  ctx.lineWidth = 4;
+
+  ctx.shadowBlur = 20;
+
+  ctx.shadowColor =
+  "cyan";
+
+  ctx.beginPath();
+
+  ctx.moveTo(
+    0,
+    groundY()+70
+  );
+
+  ctx.lineTo(
+    canvas.width,
+    groundY()+70
+  );
+
+  ctx.stroke();
+
+  if(!started) return;
+
+  /* FIZYKA */
+
+  dino.velocityY += gravity;
+
+  dino.y += dino.velocityY;
+
+  if(
+    dino.y >= groundY()
+  ){
+
+    dino.y = groundY();
+
+    dino.jumping = false;
+
+  }
+
+  /* PARTICLES */
+
+  particles.push({
+
+    x:dino.x,
+
+    y:dino.y+65,
+
+    size:
+    Math.random()*5,
+
+    life:25
+
+  });
+
+  particles.forEach(
+    (p,index)=>{
+
+    p.life--;
+
+    p.x -= 4;
+
+    ctx.fillStyle =
+    "rgba(0,255,255,"
+    +(p.life/25)+")";
+
+    ctx.beginPath();
+
+    ctx.arc(
+      p.x,
+      p.y,
+      p.size,
+      0,
+      Math.PI*2
+    );
+
+    ctx.fill();
+
+    if(p.life <= 0){
+
+      particles.splice(
+        index,
+        1
+      );
+
+    }
+
+  });
+
+/* PIXEL DINO */
+
+ctx.shadowBlur = 25;
+ctx.shadowColor = "cyan";
+
+/* GŁOWA */
+
+ctx.fillStyle = "#00ffff";
+
+ctx.fillRect(
+  dino.x + 10,
+  dino.y,
+  55,
+  40
+);
+
+/* TYŁ GŁOWY */
+
+ctx.fillStyle = "#0099ff";
+
+ctx.fillRect(
+  dino.x,
+  dino.y + 8,
+  15,
+  25
+);
+
+/* CIAŁO */
+
+ctx.fillStyle = "#00ccff";
+
+ctx.fillRect(
+  dino.x + 18,
+  dino.y + 40,
+  35,
+  20
+);
+
+/* NOGI */
+
+ctx.fillStyle = "#00ffff";
+
+ctx.fillRect(
+  dino.x + 18,
+  dino.y + 60,
+  10,
+  12
+);
+
+ctx.fillRect(
+  dino.x + 42,
+  dino.y + 60,
+  10,
+  12
+);
+
+/* OGON */
+
+ctx.fillStyle = "#0066ff";
+
+ctx.fillRect(
+  dino.x - 8,
+  dino.y + 42,
+  25,
+  10
+);
+
+/* OKO */
+
+ctx.fillStyle = "#001122";
+
+ctx.fillRect(
+  dino.x + 45,
+  dino.y + 10,
+  8,
+  8
+);
+
+/* OBRYS */
+
+ctx.strokeStyle = "black";
+
+ctx.lineWidth = 2;
+
+ctx.strokeRect(
+  dino.x + 10,
+  dino.y,
+  55,
+  40
+);
+
+ctx.strokeRect(
+  dino.x + 18,
+  dino.y + 40,
+  35,
+  20
+);
+
+  /* PRZESZKODY */
+
+  obstacles.forEach(
+    (obs,index)=>{
+
+    obs.x -= speed;
+
+    /* TEXTURA */
+
+    let obstacleGradient =
+    ctx.createLinearGradient(
+      obs.x,
+      obs.y,
+      obs.x,
+      obs.y + obs.height
+    );
+
+    obstacleGradient.addColorStop(
+      0,
+      "#ff003c"
+    );
+
+    obstacleGradient.addColorStop(
+      1,
+      "#800020"
+    );
+
+    ctx.fillStyle =
+    obstacleGradient;
+
+    ctx.shadowColor =
+    "#ff003c";
+
+    ctx.shadowBlur = 25;
+
+    ctx.fillRect(
+      obs.x,
+      obs.y,
+      obs.width,
+      obs.height
+    );
+
+    /* WZÓR */
+
+    ctx.strokeStyle =
+    "rgba(255,255,255,0.15)";
+
+    for(
+      let i=0;
+      i<obs.height;
+      i+=12
+    ){
+
+      ctx.beginPath();
+
+      ctx.moveTo(
+        obs.x,
+        obs.y + i
+      );
+
+      ctx.lineTo(
+        obs.x + obs.width,
+        obs.y + i
+      );
+
+      ctx.stroke();
+
+    }
+
+    /* KOLIZJA */
+
+    if(
+      collision(
+        dino,
+        obs
+      )
+    ){
+
+      endGame();
+
+    }
+
+    /* USUWANIE */
+
+    if(
+      obs.x + obs.width < 0
+    ){
+
+      obstacles.splice(
+        index,
+        1
+      );
+
+    }
+
+  });
+
+  /* SCORE */
+
+  score += 0.08;
+
+  if(score > highscore){
+
+    highscore =
+    Math.floor(score);
+
+    localStorage.setItem(
+      "dinoHighscore",
+      highscore
+    );
+
+  }
+
+  /* SPEED */
+
+  speed += 0.008;
+
+  /* HUD */
+
+  document
+  .getElementById("score")
+  .innerText =
+  Math.floor(score);
+
+  document
+  .getElementById("record")
+  .innerText =
+  highscore;
+
+}
+
+resetGame();
+
+update();
+
+</script>
+
+</body>
+</html>

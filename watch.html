@@ -1,0 +1,3127 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria - Craftea</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+  <header class="navbar">
+
+    <div class="logo">
+      <h1>Craftea</h1>
+    </div>
+
+  <nav>
+    <a href="index.html">Strona główna</a>
+    <a href="index.html#news">Aktualności</a>
+    <a href="gallery.html">Galeria</a>
+    <a href="download.html">Pobieralnia</a>
+    <a href="watch.html">Oglądanko</a>
+    <a href="games.html">Granko</a>
+    <a href="index.html#recruitment">Rekrutacja</a>
+    <a href="index.html#contact">Kontakt</a>
+  </nav>
+        <!-- PRZEŁĄCZNIK MOTYWU -->
+    <button id="theme-toggle">
+      🌙
+    </button>
+
+  </header>
+
+  <title>Oglądanko</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section class="section">
+
+  <h2>Oglądanko</h2>
+  <div class="watch-info">
+
+  <p>
+    Po wybraniu filmu nastąpi przekierowanie
+    do zewnętrznego odtwarzacza.
+  </p>
+
+  <p>
+    Odtwarzacze należą do zewnętrznych serwisów 
+    nie odpowiadamy za reklamy ani treści,
+    które mogą się tam pojawić.
+  </p>
+
+</div>
+  <div class="box watch-login">
+
+    <input 
+  type="password" 
+  id="watch-password" 
+  placeholder="Podaj hasło"
+  onkeypress="handleEnter(event)"
+>
+
+    <button onclick="checkPassword()">
+      Wejdź
+    </button>
+    
+    
+
+  </div>
+
+  <div id="watch-content" style="display:none; width:100%;">
+
+  <!-- WYSZUKIWARKA -->
+  <div class="search-wrapper">
+
+    <input
+      type="text"
+      id="movie-search"
+      placeholder="Szukaj filmu..."
+      class="movie-search"
+      onkeyup="searchMovies()"
+    >
+
+  </div>
+
+<!-- FILMY -->
+<div class="watch-grid">
+
+  <!-- FILM 1 -->
+  <div class="watch-card">
+
+    <img
+      src="https://fwcdn.pl/fpo/23/78/10082378/8224141.8.webp"
+      alt="Film">
+
+    <div class="text">
+      <h3>David (2025)</h3>
+    </div>
+
+    <!-- ROZWIJANE LINKI -->
+    <div class="watch-links">
+
+    
+
+      <a href="https://streamtape.com/v/Xx4vPjYbakFAYy/David.mkv.mp4"
+         target="_blank">
+        Streamtape
+      </a>
+
+    </div>
+
+  
+
+  </div>
+
+  <!-- FILM 2 -->
+  <div class="watch-card">
+
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrBZsudHfXEZ6finAUPeYg0FXugcuQWDXYInWEgYcbwimyKOEZc-xmQzzJx7E1orboKZPC&s=10"
+      alt="Film">
+
+    <div class="text">
+      <h3>Mortal Kombat II</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://bryantenunder.com/e/7iteaqeywtbn"
+         target="_blank">
+        Voe
+      </a>
+
+    </div>
+
+    
+
+  </div>
+    <!-- FILM 3 -->
+  <div class="watch-card">
+
+    <img
+      src="https://fwcdn.pl/fpo/30/81/603081/8214512.3.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Avatar: Ogień i popiół</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://play.ekino.link/TXjM9dxJo82oRgK2BFH3IAuhaOxERKzVgVBtt-4rqb7LSDx0ow2Ch0ZGyuUlj2LgQEAbI-dCO6tnutn9yaLL4wCQxnb1dMpnCRLr6udyjxLBPNQ-_USoK3enaI_T2QUIsIgrGdFeazXVD_w58Jn882MaBeKkV5cesfziIwmYpL9tZbmz9sZSPbQzQ6VFx-8xbRsbm7dLw5QT7II6DwYaqWDICY6YDEIZPNkpOGQC7x7fy-3gsWAk5BmpqdxUJYWE67xLvWWEhhBkMdMVzPP120J2Xvc4-PpvvLARu2GrrHXi"
+         target="_blank">
+        ekino
+      </a>
+
+    </div>
+
+  
+
+  </div>
+
+
+  <!-- FILM 4 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/212.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Avatar</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/4908603/1779835909/489893ac47b497d07e2c61d6c28962d1412f4dde73bf534abd1d06bb594f6e7d/"
+         target="_blank">
+        Streamtape
+      </a>
+
+    </div>
+
+  
+
+  </div>
+    <!-- FILM 5 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/57827.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Avatar: Istota wody</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/6960727/1779836036/21ffaaa41652554128cb405619545331c292bbb7213d9d4eb90c41f29cdf7f0b/"
+         target="_blank">
+         vidmoly
+      </a>
+
+    </div>
+
+   
+
+  </div>
+    <!-- FILM 6 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/61025.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Pięć Koszmarnych Nocy</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/4235995/1779836200/9eabeea2d8d2e18b288330a99aadbb101d084de873485bc116a391a7d87e880f/"
+         target="_blank">
+        Voe
+      </a>
+      <a href="https://embed.tmp-url.pro/4235997/1779836280/099b51eac0b71a2f76a4fed5e576afdb0f62ede6b590e06b2af47414bf6ccd26/"
+         target="_blank">
+        Streamtape
+      </a>
+
+    </div>
+
+
+
+  </div>
+    <!-- FILM 7 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/67433.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Pięć Koszmarnych Nocy 2</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://bryantenunder.com/e/laarxclxiojh"
+         target="_blank">
+        Voe
+      </a>
+
+    </div>
+
+
+
+  </div>
+    <!-- FILM 8 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/52991.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Mortal Kombat I</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://play.ekino.link/rs5bE8aAOsRq5PMzrqkJVZ4PVkUMlMLuAAo5_xFV__ihZMm8SEEfP6-AgEy0k0neg4WONhg0Eb8PtfmFsG0-FJ9Dn-1_xLYg5WiU6m5e0_AbUEko0aUegqQOYztIlB0WQ_RfvhSvziK7Khi-sP14b779PF3yaYSP4feUF2jJVe6UWnnLCrH1zD7n_3gWm69X4BulrxWk-MYywcgsEeJ070Hd01QJebwGp5-odzegu0Q9GR0LfXJcm_9FsObtfJ9KQQ5k99A"
+         target="_blank">
+        Ekino
+      </a>
+
+    </div>
+
+   
+
+  </div>
+    <!-- FILM 9 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/3883.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Hobbit: Bitwa Pięciu Armii</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/4638259/1779836704/8852a4982c6a645e7d547b46fea64e81d282edf29d1c8fd67fbf46e8316cc709/"
+         target="_blank">
+        Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+  <!-- FILM 10 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/3882.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Hobbit: Pustkowie Smauga</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/4638248/1779836853/81ad21cadeda379eb70889313206c2c8bb61e81d994329e16044c67ccdd5d515/"
+         target="_blank">
+        Voe
+      </a>
+
+    </div>
+
+    
+
+  </div>
+   <!-- FILM 11 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/219.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Hobbit: Niezwykła podróż</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/3543403/1779837119/b8af7c6122b81378fd2822943f08b82a3267456e8e4753011023d8f3988974ff/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+   <!-- FILM 13 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/154.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Władca Pierścieni: Drużyna Pierścienia</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/1157842/1779837224/f17a4a579f72bc0b543a2fb599a95591d752abe3000de51a82db8d7bb467d400/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+   <!-- FILM 14 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/155.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Władca Pierścieni: Powrót króla</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/6405860/1779837377/4652a423a2b0c36426ec6d66b6093fea5a578cb07fbae4075eae45cc33845c42/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+   <!-- FILM 15 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/51423.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Władca Pierścieni: Dwie wieże</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/2406850/1779837268/69cb10b86f42eb433f5cc6e12f86bd15f68b769e4cd5ab3938e10e99426e1156/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+   <!-- FILM 16 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/64367.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Władca Pierścieni: Wojna Rohirrimów</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/5278778/1779837798/c9bbd726c0bedd00ae1143fc5a02c0ec5d7fd592dca02305eba45fb001f04145/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 17 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/56147.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Chip i Dale: Brygada RR</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/2192129/1779837891/e615dffb0b408b5723250421d07a899648173f779a5a4ed88d56c9c7463f8f0f/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 18 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/37278.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Złoty Kompas</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7593765/1779837991/fd4a8547d5409c119bc120f549abd2bf04ddeaa51e358fc022835161372f4bee/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 19 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/33499.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Scooby-Doo i duch czarownicy</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7592525/1779838059/bd5cac5b1bf8f881704ff9f47678ebd9aae14e7d88bf515ba0c6ef1ee83a8151/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 20 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/61449.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Kosmici w mojej szkole</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7589336/1779838120/cd0b28335e75c5c965afbbd7974b01144a121ee6c9f50783d6f9bb2e427ab5dc/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 21 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/61314.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Życzenie</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7589473/1779838203/4a790caf6073646d989357480d19d301381ce93d671a09567f2c13043a7a7a75/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 22 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/60979.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Koko smoko</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7586822/1779838253/cbdcd4eb8cc9956f474a13881a9f59bd55ae682bce776b0c2200430e61f8ee6f/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 23 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/60972.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Bayala i ostatni smok</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7453151/1779838286/4a3bf376bbddfa119265789c7b6dad5da3953186953a180b69a15fae55ec53fc/"
+         target="_blank">
+          Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 24 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/60905.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Legenda Sarili</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7586885/1779838357/3f513fadcf0501ec4e138028d89ccf422374f96d19fca5320298d5b327856a1b/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 25 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/474.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Kubo i dwie struny</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/1083710/1779838422/8c5a6717fcb5ba81e4bf57fc2f42ea7394136766fccaa70ad1f8d66a031a9248/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 26 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/38373.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Mustang z Dzikiej Doliny</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://play.ekino.link/mrtfV5VEOc7a-5pm7TpDWnGm9psfBcgmVNKK0nuJKyNRykgUu3wT_zmgA8Ex-BsKbz2g08L1fsV4cFKx73WvwJLJvZ9OKJtghCYTMYHwDNrhd9qRCgZhtl56Ck4YzqhFLASxS1PCHJj0w_ihaZd2OtKd0TSJkMBVcGm3TLPMrmdAPegG0pqEQtrHbLJGrnIrDBeNi6_wTccfjuJLywznJCheVLG5Jm2vYEkNrHbj7ZR0tUwrPYyvdl0oPJa-ffJSUraqFB9dGK5pSJyScms2yEbNgCBxHd1EnSvhoJF15i70s3wfR7fNMGAPgoRBnr4"
+         target="_blank">
+         Ekino
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 27 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/52866.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Mój brat niedźwiedź</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/5275675/1779838547/d654081d6562f02fbbf8763122ba6efcfcdc7cdc2a4a790e2c21c286d9528d27/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 28 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/1045.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Legenda Tarzana</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/3885274/1779838591/fda696dfe8e5110f305dc203214079b9f8bb017df52c506b7df09428cf3e4c9e/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 29 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/1362.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Xena: Wojownicza Księżniczka: Koniec legendy</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/6180446/1779838644/07cb9b8e7cdf1851cf5e1333357df887ff3d0fd92be2cd8332edcc23e75a83b5/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 30 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/57681.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Dziwny świat</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7452121/1779838708/3708ffb6c6b968eb07e4a02362e00c6d9afea902c7ae86526ca6abe63678221b/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 31 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/58514.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Zaklęta jaskinia</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7452332/1779838804/76c8c3c68ba654f93e9294ae788acb3ff0925fff892179b6ab7378c1f370741b/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 32 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/58384.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Królewna Śnieżka i magiczne krasnoludki</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7452288/1779838840/cf5b6b8a03b1029a47f1510df0e7e9552e77a85ca97fe4acbbee9e6480ad634f/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 33 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/1759.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Mała syrenka(2018)</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7305398/1779838894/9b37e00ddc825b86d52292b7183f7b6ef6492c846e2d18725923b16c9b315d67/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 34 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/57578.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Tom and Jerry: Kraina bałwanków</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7452102/1779839074/81dfb0bbd38ec0a49348fb843b22455d3ed1ed40eae94bd342478ae5c313868f/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 35 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/57496.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Smok mojego taty</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7452070/1779839110/ffaff210a7830df03c51c677d07c18f82fbf799c3733332ad7e7be5c4f4c2995/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 36 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/67860.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Wyjście 8</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://bryantenunder.com/e/htopvhh7rjru"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 37 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/52940.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Mustang z Dzikiej Doliny: Droga do wolności</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7450707/1779839229/bcc10c7356d62f077299b2c666e86535e851a050395c1e5aa667319b506a16ec/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 38 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/55564.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Wilk, lew i ja</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7451303/1779839259/0aa548bc685fede5882541401befdfe0e9acf4c44125270cabc9e4de24368ae6/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 39 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/56225.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Kapitan Nova</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7451507/1779839321/c5e96726f098e166ee7cea4bf4aa8a9ddaea1e1a58a47356dca53f20e44801fb/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 40 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/56133.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Potworna rodzinka 2</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7451472/1779839352/7852c5c07eba00cabebd392be005b3a0e18d36ae25ed603709e55a6ddb042101/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 41 -->
+  <div class="watch-card">
+
+    <img
+      src="https://ekino-tv.pl/static/normal/4i1bcf8mxomy.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Potworna rodzinka</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://fileone.tv/v/5n83sq7r4so1q"
+         target="_blank">
+         File1
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 42 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/7944.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Rodzinka nie z tej Ziemi</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7224944/1779839563/5f7e6e9d72b12ede983d0708a8942a9b7ae46a57d4566fd950c65fa91fe61555/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 43 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/4013.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Rodzinka Robinsonów</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/6024479/1779839598/107f404939f3742e2103558703766f6d2d3be6f2c375e76f769f4d242afd5305/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 44 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/53507.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Rodzinka rządzi</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/5472949/1779839648/179b766f934b7392fab6ad18445dedd250a436ff9473d58cdbcdbe1d766a6fa2/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 45 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/1799.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Dzieciak rządzi</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/2430964/1779839676/f9eb0618d0f248d25b6e8b68e150991c0855bf4b17a54477b0b27532ce240ee3/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 46 -->
+  <div class="watch-card">
+
+    <img
+      src="https://ekino-tv.pl/static/normal/nxbte9w95fw6.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>LEGO DC: Batman - Grunt to rodzinka</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://play.ekino.link/t25g_Z2Dg6n5EbtDf9e2X_bliH9M3mTXUnknnWvLpSM5Ca1mGvKUFyPfi6fc02unl7lHLvMc23005s-EdAP56qdUVlXrdmim1Nunnivrtn4l4pJC0934BRTX3MuT7Mt-d-vtT0l6hB8dxv3HzC9SNHCjtc46FhQOW-vjsn9hLwt3g8PJxtaTz21LIvskyZGhyjwLtQiufJyhJ0gYvBUahrbvxlRsfydO7ImbKTLEJp3IAqOabkIUXxoLo6zU8o-vzYjWpwdDOUFxpTM37YzND-hDttINBlf5kUcqRd41q18SfIGF8EriXs82vP4mbDcicwEqRqk"
+         target="_blank">
+         Ekino
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 47 -->
+  <div class="watch-card">
+
+    <img
+      src="https://ekino-tv.pl/static/normal/10mjhy2lowh8.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Diabeł ubiera się u Prady</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://play.ekino.link/bla3CdowJ37YloCbkkS9I96po15iV_lty_1Y-2YtUf8qx54ibt3O2lmw6rELvVC6NTq2Z65LKd2fmVNrvI93RQZ0bUJ8yRSMqsvBAZGJSzgJ15e9PsLzifrc02OFwKlDbrgOpbgCADi58T_I8K1NQEQAIJYn-U9FN3auU7bvE1cmgzFQ5kEa_pTKL5Cy0L0lduRMvXwpSTKeULPd4nORHSsNg_AbwayGhDu1waqFaolv3NuwnmbY1VBy3TiJiEpedei51h7sJgxB9KIgldtiz_UaTBoocyx18X10QgYQocXwyDJE"
+         target="_blank">
+         Ekino
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 48 -->
+  <div class="watch-card">
+
+    <img
+      src="https://ekino-tv.pl/static/normal/ej559gzua8eo.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Punisher: Ostatnie starcie</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://bryantenunder.com/e/irwsgz2mdfwk"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 49 -->
+  <div class="watch-card">
+
+    <img
+      src="https://ekino-tv.pl/static/normal/0m1ja8xk5b2u.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Gotowy czy nie 2: Nadchodzę</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://play.ekino.link/eZUesqNsa2ScGaaZDPlv_13u6s5UGGmF00KMF2jDkXNku-XjVWinO_F9gSKSicwznoa-EDSquutopv20on0P7YXhwu-oHUBcTVMmG6kS7Ya79MloNeWzZ7RwlVZH4-SfEfPlPytSFHVrqn5k244yfYVYxwHvcBPV2mofe59ZQJxZBafeC3N4Dl8owG_yvesF014Ke6YoqT6waZX229u7jLM1Stw_m1QDxCN0apTH-sC9YB4EgjQX32kSPQ1Uoed317d67XCM2FSvjw9vGVdnN_4V7Z7uw-veW4WN4wMh-duv4OK7kYFyCNeMqp9nmnHqL7o"
+         target="_blank">
+         Ekino
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 50 -->
+  <div class="watch-card">
+
+    <img
+      src="https://ekino-tv.pl/static/normal/0uhgv2opvy69.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Gotowy czy nie</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://fileone.tv/v/5qrr948oq06no"
+         target="_blank">
+         file1
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 51 -->
+  <div class="watch-card">
+
+    <img
+      src="https://ekino-tv.pl/static/normal/zx5spz0ejety.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Ciche miejsce</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://fileone.tv/v/5o43226or95q5"
+         target="_blank">
+         file1
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 52 -->
+  <div class="watch-card">
+
+    <img
+      src="https://ekino-tv.pl/static/normal/2vwh363afg22.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Maszyna do zabijania</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://bryantenunder.com/e/bl8prbpengyl"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 53 -->
+  <div class="watch-card">
+
+    <img
+      src="https://ekino-tv.pl/static/normal/kkzlw87hjmvz.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>90 minut do wolności</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://savefiles.com/fflkva4fgj17"
+         target="_blank">
+         Savef 
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 54 -->
+  <div class="watch-card">
+
+    <img
+      src="https://ekino-tv.pl/static/normal/629ks0sxd0vi.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Tom Clancy: Jack Ryan - Wojna duchów</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://bryantenunder.com/e/tpstjbd0bna7"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 55 -->
+  <div class="watch-card">
+
+    <img
+      src="https://ekino-tv.pl/static/normal/p9bkz0wspu6r.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Tamerlane: Narodziny ostatniego zdobywcy</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://bryantenunder.com/e/qbaila3jbnov"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+     <!-- FILM 56 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/55228.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Nasze magiczne Encanto</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7451184/1779896442/0335167cc2e82d04c96626fe7aa3bd9252cab6ee7bba72e28feef01246d16a3c/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 57 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/59641.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Między nami żywiołami</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7589375/1779897353/4e5d14949343bb1a2c51f0c26bf1c885b777bc00c0a47c27406e17c64f38a300/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 58 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/53642.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Jeździec smoka</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7450821/1779897443/af57615d7144a677c10a85377302a9c9fe641b75cc2a6c3601c7335620141d0f/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 59 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/53590.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Nowy gang Olsena</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7450808/1779897479/43c24beded877ac0b976ab71d97a06cb511dad9487627baa4c4c550ffea2ed04/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 60 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/1635.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Shrek</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/5392920/1779897544/e8cc2e389fd6cbff8a2919e081f5be84e31809b6f61575b9f128ca4e41b16764/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 61 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/926.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Kung Fu Panda</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7141560/1779897601/44961448910e6b1ed5d138e3ded48158691ec71b749983ad60db1f0d3d3452e3/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 62 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/39741.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Kung Fu Panda 2</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7141590/1779897660/f0a2284eb539392e572f8237f42019f6b70e546101923339653d9e8084fbac1c/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 63 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/18446.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Kung Fu Panda 3</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/4521219/1779897696/dbe4ee78eab2927ce550dfa40f2b3c1f47836c5e7613e7a0f6382d39a4c50c6d/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 64 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/52378.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Alad'2</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7450621/1779897853/dc5d1726422f7bf2f1d1689ba31ad507f9edcfeb76c3dbc5dfc80dacbaf7b85c/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 65 -->
+  <div class="watch-card">
+
+    <img
+      src="https://ekino-tv.pl/static/normal/y6h7plfuk6qr.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Aladyn</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://play.ekino.link/Ab1VFDFjp63rw8XUuK5XmO9l-kA3eBk92Xki18yM2jw8-cWc1fghcFqvUb-OAma3XFJg96eTxdiaJFrzNnH4GJAPLLdQ4NFO8eCf6I62cV9b4MBRrwq4GNv2p2yhgcCTO_mFmOFHwqCDIksxNKwLjN7bI_ts5TIZimDPJzDIYPzD3Z1z7rYaBp770vWQietgy2NvCk_HqtKqwypu2ovmyCg3M8V2hrU8FW8m91mBbXWE85wi9BInVZfuPrS8FatHZKwoG4yvSOLD"
+         target="_blank">
+         Ekino
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 66 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/52385.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Podróż Xico</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7450623/1779897983/d665d1361b424141f65f9fe1d984b9b8c04fabb0d4606e7f1a6a9d7b17128c19/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 67 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/39552.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Asteriks i Obeliks: Misja Kleopatra</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/4610695/1779898015/ef9e10233bd6c10ccd5eba37e661b8c17cdd6aaf9e8d88fd71584abb3bd947dc/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 68 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/50471.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Asteriks i Obeliks kontra Cezar</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7366773/1779898064/fd50c1f7203b80de259cecf840e48b0ef8bfb1e441238556e13efa5bb490e486/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 69 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/368.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Asteriks i Obeliks: W służbie Jej Królewskiej Mości</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/5320595/1779898094/f6e5e88da74cb3d13fd63e1ba90c25ca44b7bc1080d7ee8b2c65847e3ed5ff1a/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 70 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/657.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Kingsman: Tajne służby</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7150945/1779898131/ca05a5586293a22414871e54d62140635bb7d963bd79d51bbcacad99b57c4a3a/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 71 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/51665.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Dzielny kogut Maniek</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7450447/1779898293/b1a7b5d62f00e3751f2c16fa34587fb36c3cc1029b93f862d215437493618cac/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 72 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/51473.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Turu. W pogoni za sławą</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7450416/1779898319/177e5879786eaff216777e5834b77d2d06586fda4c2f4f4d1579e1f3fa68e83e/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 73 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/50777.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Wilk w owczej skórze</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7450328/1779898352/904aeaec6d7cb9723d6a678fd8ac1fc5c0b0f72434d490c4212f7ac00d204099/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 74 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/25976.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Wilk w owczej skórze 2</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7448347/1779898393/dc5991ebf138c0a1bf84a9ca1010031e83bcf9ddb08ce91b13eadf434dcc163e/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 75 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/925.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Epoka lodowcowa</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/5588058/1779898422/c5fdd4c68c63f13c4515ae64a836d03e8ca6e93991b4c15b06c4619ec5299f00/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 76 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/25160.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Epoka Lodowcowa 3: Era Dinozaurów</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/5584038/1779898475/3bd54ad69ddb9e7adde2e5965cea5f1b69f688dbd451bfbe67ca77256900b015/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 77 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/857.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Epoka Lodowcowa 4: Wędrówka Kontynentów</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/4535008/1779898508/844e89d1eff6bdfaa6387c733fd5abb31ccc61b5c969d7b5a2469fa82914abaf/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 78 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/21960.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Epoka Lodowcowa: Mocne Uderzenie</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/2949289/1779898540/5471ffde9649e8103df542280476f77144a6c16dd89dc86189ee8b22ac355b1b/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 79 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/1049.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Rampage: Dzika Furia</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/4023057/1779898562/882f997e48ff91346c30a5cc697bff8ce4685a6e8aa7ab381c7f0fdc7ab12987/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 80 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/1148.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Godzilla</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/3841702/1779898617/fdc807fde8bd7651adfb5e84b3dbf56d23a794ffc530bb856b9482ea9a5d9624/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 81 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/8853.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Godzilla II: Król potworów</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/6839541/1779898649/46d604674fabf1bffd19af783ba85a28a382950124d5b0451e2a1c87cc511dfc/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 82 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/52877.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Godzilla kontra Kong</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/6839816/1779898695/08e9a6831fc258c4e53c5a3aa1dfd55b0637915203b85a2cdf9701ef7c452cb9/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 83 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/62154.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Godzilla i Kong: Nowe imperium</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/4429432/1779898737/5cebba25dd9eaa518139d9816b1fab3359195ed73537959030ccc57504f7f875/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 84 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/5376.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Kong: Wyspa Czaszki</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/3537673/1779898782/8497a331dc22b8ffab951c6958d9454c0607e8ab0db1e7e44c87d15c7e2dc9f7/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 85 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/3963.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>King Kong</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7149201/1779898817/60f31805c86a4cc1e7b571db5c202b382d6cf4a6278255c6e8aee38d80d30fc5/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 86 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/48392.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Zaklete pirko</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7449964/1779899022/37f114da9415cfb704ad9c8af12e11e8afb630a80aaecb7185f779d9bac6e9d4/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+       <!-- FILM 87 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/48659.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Zokkomon</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7450003/1779899170/3d2bb1e059d74390a935cd705bdd87b20ef58b8ee6e954f2e587c60c6d6f0a62/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 88 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/48094.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Super miś</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7449930/1779899190/5ca1b748442d6167cbd8b847810ce137ce59cebd8d7d76a04c7c1567af4817f6/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 89 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/46991.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Mój przyjaciel Ufik</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7449834/1779899368/f1fca7269dcaea34f84d90a9e68e92f3771f3822c9de3902c161d3cdff104ba0/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 90 -->
+  <div class="watch-card">
+
+    <img
+      src="https://ekino-tv.pl/static/normal/s1zyoq1z805q.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Need for Speed</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://play.ekino.link/LrnyVu321KMyzP5SmT8K1wigtKTIlkfB9fVzDiJUfYQ5NsbO1Sd9E0MXsZLEyQuXH6T5jrNjOwwTCFayKNhyqoDUcRghur3k2wCVgiCr2CROEmUJjZe6KC45mG1NQwVEWHa0_izsOezp__4GViC9mFyw_7Ehl1RA_oVqyOWj__tg2simSp3qrwZ8GkrufOfl_-b_-UngRI9hdmEmF-LcV8_CVL6iVyZTZcyn5YjpCwryrsR7Yu-1CLNbJs5F2_FEkCxENA"
+         target="_blank">
+         Ekino
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 91 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/313.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Wilk z Wall Street</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/1519269/1779899469/ce8db9ccd3504ed79c6a7f3a17efdfef0d840d2962907197cc76b4ef47c56a2c/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 92 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/60967.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Baranek Shaun. Film</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/3984158/1779899519/baa8e8e51b39aa84ec5218ac8c531f147a482152be7426b1dd43bec144c0c402/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 93 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/7077.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Uciekające kurczaki</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/4206440/1779899543/9ffbc049ca7b3afdbdef232eef3979d35a47c8a1e8a843e5910fe0f3a3916c6a/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 94 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/49042.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Foxter cudowny pies</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7450056/1779899574/99d14331dc4cc62719b5ec08cf4aa024afc909201a2dd6dc210df634ee9ab8b0/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 95 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/522.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Zwierzogród</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7256881/1779899604/ce884f0acca91d37df6c6860e07ba4dbaa48ff5ea447c0435ab5a61643e63348/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 96 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/67348.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Zwierzogród 2</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7372649/1779899653/ecfdd3735c5ccf8b3b687b29137ea47c911bb4ab80ea649d55d656a8319c6730/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 97 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/29689.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>W głowie się nie mieści</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/3905313/1779899679/b89590a77241113ba4c998a0d4cbd989d9408cfec8e0e62203047eeb22d3018e/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 98 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/928.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Roboty</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/1087922/1779899704/f36805993bf949c33729ebb5907032feb5bbf515e54861c823e54e12c3fa6fba/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 99 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/48581.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>WALL-E</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/3956644/1779899738/cfd7e96b89fa8f54a7639e6457744fb2236e5e494ced7a0c1b8009dafa2e1f5d/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 100 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/866.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Vaiana: Skarb oceanu</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/2785479/1779899771/7d24ec29986379c633bf413d955cd06d42a526e214f11760ed06e6b4751f127c/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 101 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/64205.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Vaiana 2</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/6431456/1779899811/578da9cac12c28907fea049f2d057edc68a026b37b4c250eb49d72d7e463ee92/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 102 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/50027.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Mulan</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/2313444/1779899845/e72a11ecb0fc069c2916594a73bed9b98aca9cce00d279d6feb9c136df980707/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 103 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/48933.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Zaczarowana</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/5122567/1779899884/b4c9686fa13dc3061dcfe8f4f040802159c4702c8567daef966438a55d47a3ec/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 104 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/25760.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Księżniczka i Żaba</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://play.ekino.link/FJ6f9S6B0p1XlvX51uKNu2PmQelzwzqPoOjAOBnHm_ufv4-WWwvG_MxD-oG4K3G6AKtQeCO1YZWgrzol223p-l-P89kByiJg_brcHLiOc1MbyakVIX0LUanO2C3Sp__1e5wgyi10LkFcAXKyP7V4vT5-FyXr3ImZL_j-oiBNr9QpoQqcRue9DBBAvHIWY68__jleixZk9vftSCBdfEaKFs4yZRMJ1avr3Eh6hV8UZU1TUZ-WCfjkzd7ITp5B5NOB3QsRRT7_W0ww6KWsPYLC60i_NXvrD9XGMP5ri7KywPj2hA"
+         target="_blank">
+         Ekino
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 105 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/25802.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Ralph Demolka</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7160046/1779900656/a3f49201a6e29245c0d3a5a8038630ad85c9ab0e6ed784ea697dfcbe5d78f65a/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 106 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/46458.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Wyprawa Magellana</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7449778/1779900780/517c35e343c8e9ba9cbe857825c6bd406e748fe6d40b0c80fee0c72b09d4d0a9/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 107 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/46460.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Legiony</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7449779/1779900810/af4b84cd3908be21731aff7de4beac3b83ac32b3e44f1f1baf47a21b3ccacba1/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 108 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/45785.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Riko prawie bocian</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7449736/1779900856/f35e78635375f0154539fe7ac501b279d9253880a4a2346a92592073546f7d07/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 109 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/45388.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Księga Daniela</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7449711/1779900884/4efe67e95b354229f9fbedf9616d73a46a5c49817e44fc82d04222bb8cf78932/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 110 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/44578.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Gotowi na wszystko. Exterminator</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7449609/1779900937/036db4de15f6616da21577959089377cd9ad603357d5fcf4fc43f8d79259a112/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 111 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/5149.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Critters</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/4631917/1779900968/a2f17e0a4a28f69a28ac41f7d08db40265f1b10191d145068f96c7c9c799db75/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 112 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/40359.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Klopsiki i inne zjawiska pogodowe</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7449443/1779900999/6deb09741bd423028d5e29ba8397fe425d644dc5466419cc097f2f63df6c5f85/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 113 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/40360.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Klopsiki kontratakują</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7449444/1779901039/f9a42279c6bf86f259b681c509be69c197eedd109ae173e044df0cce3b379c4e/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 114 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/518.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Minionki</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/4503304/1779901106/abf8fa35fb150f89fcf1cd11364c6eb8287d4939ae1baaa85621b576c872217f/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 115 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/37100.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>102 dalmatyńczyki</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7449127/1779901141/17bf4c3725f46c62b94d8486fad867f587b3a3257eb4832d3c93091b3ed13e9c/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 116 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/24374.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>101 dalmatyńczyków</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7448119/1779901175/12b90ed63c9c043cdd03de4263c7a82f4a0e1dc7fb1ba7c95efbb8c16e78dc32/"
+         target="_blank">
+         Vrra
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 117 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/854.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Critters 2</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/2610841/1779901223/eacff561a5cc2c55ca85817abb2e1781c20905d857e2654fd6f427a75fded3c6/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 118 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/853.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Critters 3</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/5516448/1779901249/51833689d5d0a9cba785d563e8e5bbb6a9cebc800cffd2560f96b2dd536e0ac3/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+         <!-- FILM 119 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/8136.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Critters 4</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/5516455/1779901689/aee5a08da4a001f9842a759d025e858131e24ef90f72ec406151e94bbbb2d03b/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+           <!-- FILM 120 -->
+  <div class="watch-card">
+
+    <img
+      src="https://filman.cc/public/static/poster/big/68389.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Peaky Blinders: Nieśmiertelny</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://embed.tmp-url.pro/7236936/1779901675/ce2e26e9faf81acd4b32a8d6063bc2b692eaee7562f6e807a7add7efd6bce6b7/"
+         target="_blank">
+         Voe
+      </a>
+
+    </div>
+
+   
+
+  </div>
+           <!-- FILM 121 -->
+  <div class="watch-card">
+
+    <img
+      src="nowy"
+      alt="Film">
+
+    <div class="text">
+      <h3>nowy</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="nowy"
+         target="_blank">
+         
+      </a>
+
+    </div>
+
+   
+
+  </div>
+           <!-- FILM 119 -->
+  <div class="watch-card">
+
+    <img
+      src="nowy"
+      alt="Film">
+
+    <div class="text">
+      <h3>nowy</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="nowy"
+         target="_blank">
+         
+      </a>
+
+    </div>
+
+   
+
+  </div>
+           <!-- FILM 119 -->
+  <div class="watch-card">
+
+    <img
+      src="nowy"
+      alt="Film">
+
+    <div class="text">
+      <h3>nowy</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="nowy"
+         target="_blank">
+         
+      </a>
+
+    </div>
+
+   
+
+  </div>
+           <!-- FILM 119 -->
+  <div class="watch-card">
+
+    <img
+      src="nowy"
+      alt="Film">
+
+    <div class="text">
+      <h3>nowy</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="nowy"
+         target="_blank">
+         
+      </a>
+
+    </div>
+
+   
+
+  </div>
+           <!-- FILM 119 -->
+  <div class="watch-card">
+
+    <img
+      src="nowy"
+      alt="Film">
+
+    <div class="text">
+      <h3>nowy</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="nowy"
+         target="_blank">
+         
+      </a>
+
+    </div>
+
+   
+
+  </div>
+           <!-- FILM 119 -->
+  <div class="watch-card">
+
+    <img
+      src="nowy"
+      alt="Film">
+
+    <div class="text">
+      <h3>nowy</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="nowy"
+         target="_blank">
+         
+      </a>
+
+    </div>
+
+   
+
+  </div>
+           <!-- FILM 119 -->
+  <div class="watch-card">
+
+    <img
+      src="nowy"
+      alt="Film">
+
+    <div class="text">
+      <h3>nowy</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="nowy"
+         target="_blank">
+         
+      </a>
+
+    </div>
+
+   
+
+  </div>
+           <!-- FILM 119 -->
+  <div class="watch-card">
+
+    <img
+      src="nowy"
+      alt="Film">
+
+    <div class="text">
+      <h3>nowy</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="nowy"
+         target="_blank">
+         
+      </a>
+
+    </div>
+
+   
+
+  </div>
+           <!-- FILM 119 -->
+  <div class="watch-card">
+
+    <img
+      src="nowy"
+      alt="Film">
+
+    <div class="text">
+      <h3>nowy</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="nowy"
+         target="_blank">
+         
+      </a>
+
+    </div>
+
+   
+
+  </div>
+           <!-- FILM 119 -->
+  <div class="watch-card">
+
+    <img
+      src="nowy"
+      alt="Film">
+
+    <div class="text">
+      <h3>nowy</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="nowy"
+         target="_blank">
+         
+      </a>
+
+    </div>
+
+   
+
+  </div>
+           <!-- FILM 119 -->
+  <div class="watch-card">
+
+    <img
+      src="nowy"
+      alt="Film">
+
+    <div class="text">
+      <h3>nowy</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="nowy"
+         target="_blank">
+         
+      </a>
+
+    </div>
+
+   
+
+  </div>
+           <!-- FILM 119 -->
+  <div class="watch-card">
+
+    <img
+      src="nowy"
+      alt="Film">
+
+    <div class="text">
+      <h3>nowy</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="nowy"
+         target="_blank">
+         
+      </a>
+
+    </div>
+
+   
+
+  </div>
+
+
+</div>
+</section>
+
+<script src="watch.js"></script>
+
+</body>
+</html>

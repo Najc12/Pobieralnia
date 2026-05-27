@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Craftea Solitaire XP</title>
+
+<style>
+
+body{
+  margin:0;
+  overflow:hidden;
+  font-family:Tahoma, Arial;
+  user-select:none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #0f7a2f,
+      #0a5c22
+    );
+}
+
+/* STÓŁ */
+
+#game{
+  width:100vw;
+  height:100vh;
+  position:relative;
+}
+
+/* TOP BAR */
+
+.top-ui{
+  position:absolute;
+
+  top:15px;
+  left:20px;
+
+  display:flex;
+  gap:30px;
+
+  z-index:999;
+}
+
+.ui-box{
+  background:rgba(0,0,0,0.35);
+
+  padding:10px 20px;
+
+  border-radius:12px;
+
+  border:2px solid rgba(255,255,255,0.2);
+
+  color:white;
+
+  font-size:22px;
+
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.1),
+    0 0 15px rgba(0,0,0,0.4);
+}
+
+/* SLOTY */
+
+.slot{
+  width:100px;
+  height:140px;
+
+  border-radius:10px;
+
+  border:2px dashed rgba(255,255,255,0.35);
+
+  position:absolute;
+
+  background:
+    rgba(255,255,255,0.04);
+}
+
+/* KARTY */
+
+.card{
+  width:100px;
+  height:140px;
+
+  border-radius:10px;
+
+  position:absolute;
+
+  background:white;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.45);
+
+  cursor:pointer;
+
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+
+  overflow:hidden;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+}
+
+.card.red{
+  color:#d60000;
+}
+
+.card.black{
+  color:#000;
+}
+
+/* TYŁ KARTY */
+
+.card.back{
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #003cff,
+      #003cff 10px,
+      #0025a8 10px,
+      #0025a8 20px
+    );
+}
+
+/* NAROŻNIKI */
+
+.corner{
+  position:absolute;
+
+  font-size:24px;
+  font-weight:bold;
+
+  line-height:1.1;
+}
+
+.top-left{
+  top:8px;
+  left:10px;
+}
+
+.bottom-right{
+  right:10px;
+  bottom:8px;
+
+  transform:rotate(180deg);
+}
+
+/* ŚRODEK */
+
+.center{
+  position:absolute;
+
+  inset:0;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:42px;
+}
+
+/* WIN */
+
+.win{
+  position:absolute;
+
+  inset:0;
+
+  background:rgba(0,0,0,0.6);
+
+  display:none;
+
+  justify-content:center;
+  align-items:center;
+
+  flex-direction:column;
+
+  z-index:9999;
+}
+
+.win h1{
+  color:white;
+
+  font-size:90px;
+
+  text-shadow:
+    0 0 20px gold;
+}
+
+.win button{
+  margin-top:30px;
+
+  padding:18px 40px;
+
+  border:none;
+
+  border-radius:12px;
+
+  font-size:24px;
+
+  cursor:pointer;
+
+  background:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="game">
+
+<div class="top-ui">
+
+  <div class="ui-box">
+    Punkty:
+    <span id="score">0</span>
+  </div>
+
+  <div class="ui-box">
+    Czas:
+    <span id="time">0</span>s
+  </div>
+
+</div>
+
+<div id="win" class="win">
+
+  <h1>WYGRANA</h1>
+
+  <button onclick="location.reload()">
+    Zagraj ponownie
+  </button>
+
+</div>
+
+</div>
+
+<script>
+
+const game =
+document.getElementById("game");
+
+const suits =
+["♠","♥","♦","♣"];
+
+const values =
+["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
+
+let deck = [];
+
+let tableau =
+[[],[],[],[],[],[],[]];
+
+let foundations =
+[[],[],[],[]];
+
+let stock = [];
+let waste = [];
+
+let dragged = null;
+let offsetX = 0;
+let offsetY = 0;
+
+let score = 0;
+let time = 0;
+
+/* TIMER */
+
+setInterval(()=>{
+
+  time++;
+
+  document.getElementById(
+    "time"
+  ).innerText = time;
+
+},1000);
+
+/* TASOWANIE */
+
+function shuffle(array){
+
+  for(
+    let i=array.length-1;
+    i>0;
+    i--
+  ){
+
+    let j =
+    Math.floor(
+      Math.random()*(i+1)
+    );
+
+    [array[i],array[j]] =
+    [array[j],array[i]];
+
+  }
+
+}
+
+/* TWORZENIE TALII */
+
+function createDeck(){
+
+  deck = [];
+
+  suits.forEach(suit=>{
+
+    values.forEach((value,index)=>{
+
+      deck.push({
+
+        suit,
+        value,
+        rank:index+1,
+
+        color:
+          suit==="♥" ||
+          suit==="♦"
+          ? "red"
+          : "black",
+
+        faceUp:false
+
+      });
+
+    });
+
+  });
+
+}
+
+/* ROZDANIE */
+
+function deal(){
+
+  createDeck();
+
+  shuffle(deck);
+
+  for(
+    let col=0;
+    col<7;
+    col++
+  ){
+
+    for(
+      let row=0;
+      row<=col;
+      row++
+    ){
+
+      let card =
+      deck.pop();
+
+      if(
+        row===col
+      ){
+
+        card.faceUp = true;
+
+      }
+
+      tableau[col].push(card);
+
+    }
+
+  }
+
+  stock = deck;
+
+}
+
+/* RENDER */
+
+function render(){
+
+  game.querySelectorAll(
+    ".card,.slot"
+  ).forEach(el=>el.remove());
+
+  /* STOCK */
+
+  createSlot(
+    20,
+    100
+  );
+
+  createSlot(
+    140,
+    100
+  );
+
+  /* FUNDAMENTY */
+
+  for(
+    let i=0;
+    i<4;
+    i++
+  ){
+
+    createSlot(
+      650+i*120,
+      100
+    );
+
+  }
+
+  /* STOCK CARD */
+
+  if(stock.length){
+
+    let back =
+    createCardElement({
+
+      faceUp:false
+
+    });
+
+    back.style.left =
+      "20px";
+
+    back.style.top =
+      "100px";
+
+    back.onclick = drawCard;
+
+    game.appendChild(back);
+
+  }
+
+  /* WASTE */
+
+  if(waste.length){
+
+    let card =
+    createCardElement(
+      waste[
+        waste.length-1
+      ]
+    );
+
+    card.style.left =
+      "140px";
+
+    card.style.top =
+      "100px";
+
+    setupDrag(
+      card,
+      waste[
+        waste.length-1
+      ],
+      "waste"
+    );
+
+    game.appendChild(card);
+
+  }
+
+  /* FOUNDATION */
+
+  foundations.forEach(
+    (pile,index)=>{
+
+    if(pile.length){
+
+      let card =
+      createCardElement(
+        pile[
+          pile.length-1
+        ]
+      );
+
+      card.style.left =
+        (650+index*120)+"px";
+
+      card.style.top =
+        "100px";
+
+      game.appendChild(card);
+
+    }
+
+  });
+
+  /* TABLEAU */
+
+  tableau.forEach(
+    (pile,col)=>{
+
+    pile.forEach(
+      (card,row)=>{
+
+      let el =
+      createCardElement(card);
+
+      el.style.left =
+        (20+col*120)+"px";
+
+      el.style.top =
+        (300+row*35)+"px";
+
+      if(card.faceUp){
+
+        setupDrag(
+          el,
+          card,
+          col
+        );
+
+      }
+
+      game.appendChild(el);
+
+    });
+
+  });
+
+  checkWin();
+
+}
+
+/* SLOT */
+
+function createSlot(x,y){
+
+  let slot =
+  document.createElement("div");
+
+  slot.className = "slot";
+
+  slot.style.left =
+    x+"px";
+
+  slot.style.top =
+    y+"px";
+
+  game.appendChild(slot);
+
+}
+
+/* KARTA */
+
+function createCardElement(card){
+
+  let el =
+  document.createElement("div");
+
+  el.className =
+    "card";
+
+  if(!card.faceUp){
+
+    el.classList.add(
+      "back"
+    );
+
+    return el;
+
+  }
+
+  el.classList.add(
+    card.color
+  );
+
+  el.innerHTML = `
+
+  <div class="
+    corner top-left">
+
+    ${card.value}<br>
+    ${card.suit}
+
+  </div>
+
+  <div class="center">
+    ${card.suit}
+  </div>
+
+  <div class="
+    corner bottom-right">
+
+    ${card.value}<br>
+    ${card.suit}
+
+  </div>
+
+  `;
+
+  return el;
+
+}
+
+/* DOBIERANIE */
+
+function drawCard(){
+
+  if(stock.length){
+
+    let card =
+    stock.pop();
+
+    card.faceUp = true;
+
+    waste.push(card);
+
+  }else{
+
+    stock =
+    waste.reverse();
+
+    stock.forEach(
+      c=>c.faceUp=false
+    );
+
+    waste = [];
+
+  }
+
+  render();
+
+}
+
+/* DRAG */
+
+function setupDrag(
+  el,
+  card,
+  from
+){
+
+  el.onmousedown =
+  function(e){
+
+    dragged = {
+      el,
+      card,
+      from
+    };
+
+    offsetX =
+      e.offsetX;
+
+    offsetY =
+      e.offsetY;
+
+    el.style.zIndex =
+      9999;
+
+  };
+
+}
+
+document.onmousemove =
+function(e){
+
+  if(!dragged) return;
+
+  dragged.el.style.left =
+    (e.pageX-offsetX)+"px";
+
+  dragged.el.style.top =
+    (e.pageY-offsetY)+"px";
+
+};
+
+document.onmouseup =
+function(e){
+
+  if(!dragged) return;
+
+  let x = e.pageX;
+  let y = e.pageY;
+
+  /* FOUNDATION */
+
+  for(
+    let i=0;
+    i<4;
+    i++
+  ){
+
+    let sx =
+      650+i*120;
+
+    let sy = 100;
+
+    if(
+      x>sx &&
+      x<sx+100 &&
+      y>sy &&
+      y<sy+140
+    ){
+
+      moveToFoundation(i);
+
+      render();
+
+      dragged = null;
+
+      return;
+
+    }
+
+  }
+
+  /* TABLEAU */
+
+  for(
+    let i=0;
+    i<7;
+    i++
+  ){
+
+    let sx =
+      20+i*120;
+
+    if(
+      x>sx &&
+      x<sx+100
+    ){
+
+      moveToTableau(i);
+
+      render();
+
+      dragged = null;
+
+      return;
+
+    }
+
+  }
+
+  render();
+
+  dragged = null;
+
+};
+
+/* TABLEAU MOVE */
+
+function moveToTableau(i){
+
+  let pile =
+    tableau[i];
+
+  let card =
+    dragged.card;
+
+  let last =
+    pile[
+      pile.length-1
+    ];
+
+  if(!last){
+
+    if(card.rank===13){
+
+      addToPile(i);
+
+    }
+
+    return;
+
+  }
+
+  if(
+
+    last.faceUp &&
+    last.color !== card.color &&
+    last.rank === card.rank+1
+
+  ){
+
+    addToPile(i);
+
+  }
+
+}
+
+/* FOUNDATION MOVE */
+
+function moveToFoundation(i){
+
+  let pile =
+    foundations[i];
+
+  let card =
+    dragged.card;
+
+  let last =
+    pile[
+      pile.length-1
+    ];
+
+  if(!last){
+
+    if(card.rank===1){
+
+      removeDragged();
+
+      pile.push(card);
+
+      score += 10;
+
+    }
+
+    return;
+
+  }
+
+  if(
+
+    last.suit===card.suit &&
+    card.rank===last.rank+1
+
+  ){
+
+    removeDragged();
+
+    pile.push(card);
+
+    score += 10;
+
+  }
+
+}
+
+/* ADD */
+
+function addToPile(i){
+
+  removeDragged();
+
+  tableau[i].push(
+    dragged.card
+  );
+
+}
+
+/* REMOVE */
+
+function removeDragged(){
+
+  if(
+    dragged.from==="waste"
+  ){
+
+    waste.pop();
+
+    return;
+
+  }
+
+  let pile =
+    tableau[
+      dragged.from
+    ];
+
+  pile.pop();
+
+  if(
+    pile.length &&
+    !pile[
+      pile.length-1
+    ].faceUp
+  ){
+
+    pile[
+      pile.length-1
+    ].faceUp = true;
+
+  }
+
+}
+
+/* WIN */
+
+function checkWin(){
+
+  let won =
+  foundations.every(
+    p=>p.length===13
+  );
+
+  if(won){
+
+    document.getElementById(
+      "win"
+    ).style.display =
+    "flex";
+
+  }
+
+  document.getElementById(
+    "score"
+  ).innerText = score;
+
+}
+
+deal();
+
+render();
+
+</script>
+
+</body>
+</html>
