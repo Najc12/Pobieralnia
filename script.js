@@ -1,25 +1,28 @@
-const toggleButton = document.getElementById("theme-toggle");
+document.addEventListener("DOMContentLoaded", () => {
 
-/* ZAPIS MOTYWU */
-if (localStorage.getItem("theme") === "light") {
-  document.body.classList.add("light-theme");
-  toggleButton.textContent = "☀️";
-}
+  const themeBtn = document.getElementById("theme-toggle");
 
-/* KLIK */
-toggleButton.addEventListener("click", () => {
+  if (themeBtn) {
 
-  document.body.classList.toggle("light-theme");
+    // wczytaj zapisany motyw
+    if (localStorage.getItem("theme") === "light") {
+      document.body.classList.add("light-theme");
+      themeBtn.textContent = "☀️";
+    }
 
-  if (document.body.classList.contains("light-theme")) {
+    themeBtn.addEventListener("click", () => {
 
-    toggleButton.textContent = "☀️";
-    localStorage.setItem("theme", "light");
+      document.body.classList.toggle("light-theme");
 
-  } else {
+      if (document.body.classList.contains("light-theme")) {
+        themeBtn.textContent = "☀️";
+        localStorage.setItem("theme", "light");
+      } else {
+        themeBtn.textContent = "🌙";
+        localStorage.setItem("theme", "dark");
+      }
 
-    toggleButton.textContent = "🌙";
-    localStorage.setItem("theme", "dark");
+    });
 
   }
 
@@ -121,3 +124,47 @@ if (passwordInput && loginButton) {
   });
 
 }
+/* =========================
+   INTERAKTYWNE TŁO 3D
+========================= */
+
+document.addEventListener("mousemove", (e) => {
+
+  const x = (e.clientX / window.innerWidth - 0.5) * 20;
+  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+
+  document.body.style.backgroundPosition =
+    `${50 + x/2}% ${50 + y/2}%`;
+
+});
+/* =========================
+   PARALAKSA TŁA
+========================= */
+
+const bg = document.getElementById("background-layer");
+
+let mouseX = 0;
+let mouseY = 0;
+
+let currentX = 0;
+let currentY = 0;
+
+document.addEventListener("mousemove", e => {
+
+  mouseX = (e.clientX / window.innerWidth - 0.5) * 40;
+  mouseY = (e.clientY / window.innerHeight - 0.5) * 40;
+
+});
+
+function animateBackground() {
+
+  currentX += (mouseX - currentX) * 0.05;
+  currentY += (mouseY - currentY) * 0.05;
+
+  bg.style.transform =
+    `translate(${currentX}px, ${currentY}px) scale(1.08)`;
+
+  requestAnimationFrame(animateBackground);
+}
+
+animateBackground();
