@@ -178,3 +178,67 @@ function toggleMovie(element) {
   );
 
 }
+let currentType = "all";
+
+function setType(type){
+
+  currentType = type;
+
+  filterMovies();
+
+}
+
+function filterMovies(){
+
+  const genre =
+    document.getElementById(
+      "genre-filter"
+    ).value;
+
+  const year =
+    document.getElementById(
+      "year-filter"
+    ).value;
+
+  const cards =
+    document.querySelectorAll(
+      ".watch-card"
+    );
+
+  cards.forEach(card => {
+
+    const cardType =
+      card.dataset.type;
+
+    const cardGenre =
+      card.dataset.genre;
+
+    const cardYear =
+      card.dataset.year;
+
+    const typeMatch =
+      currentType === "all" ||
+      cardType === currentType;
+
+    const genreMatch =
+      genre === "all" ||
+      cardGenre === genre;
+
+    const yearMatch =
+      year === "all" ||
+      cardYear === year;
+
+    if(
+      typeMatch &&
+      genreMatch &&
+      yearMatch
+    ){
+      card.style.display = "block";
+    }
+    else{
+      card.style.display = "none";
+    }
+
+  });
+
+}
