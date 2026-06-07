@@ -10,13 +10,15 @@ body {
   font-family: Arial, sans-serif;
   color: white;
 
-  background:
-    radial-gradient(circle at 20% 20%, rgba(0,255,255,0.35), transparent 25%),
-    radial-gradient(circle at 80% 30%, rgba(255,0,255,0.35), transparent 25%),
-    radial-gradient(circle at 50% 80%, rgba(0,128,255,0.35), transparent 30%),
-    linear-gradient(135deg, #050816, #0d1025, #111827, #0b0f1f);
-
+  background-image: url("night.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
+
+  transition:
+    background-image 0.5s ease,
+    color 0.5s ease;
 }
 
 /* GRID */
@@ -51,7 +53,7 @@ body::before {
   position: sticky;
   top: 0;
 
-  z-index: 9999;
+  z-index: 99999;
   
   border-bottom: 3px solid cyan;
 
@@ -446,13 +448,9 @@ nav a,
 
 /* JASNY MOTYW GAMING */
 .light-theme {
-  color: white;
+  background-image: url("day.jpg");
 
-  background:
-    radial-gradient(circle at 20% 20%, rgba(0,150,255,0.25), transparent 25%),
-    radial-gradient(circle at 80% 30%, rgba(255,0,128,0.25), transparent 25%),
-    radial-gradient(circle at 50% 80%, rgba(0,255,200,0.25), transparent 30%),
-    linear-gradient(135deg, #1b2338, #24314f, #2d3f66, #182033);
+
 }
 
 /* BOX */
@@ -1605,4 +1603,94 @@ nav a,
 
   text-shadow:
     0 0 10px cyan;
+}
+.watch-filters{
+  width:100%;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  gap:20px;
+
+  margin-bottom:30px;
+}
+
+.type-filter,
+.genre-filter{
+  display:flex;
+  gap:10px;
+}
+
+.type-filter button,
+.genre-filter select{
+  padding:10px 15px;
+
+  border:2px solid cyan;
+
+  border-radius:10px;
+
+  background:rgba(0,0,0,.5);
+
+  color:white;
+
+  cursor:pointer;
+}
+
+.type-filter button:hover{
+  background:cyan;
+  color:black;
+}
+
+@media(max-width:900px){
+
+  .watch-filters{
+    flex-direction:column;
+  }
+
+  .type-filter,
+  .genre-filter{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+}
+/* ==========================
+   INTERAKTYWNY LAS
+========================== */
+
+#forest-scene{
+  position:fixed;
+  inset:0;
+  z-index:-999;
+  overflow:hidden;
+}
+
+#forest-bg{
+  position:absolute;
+  width:110%;
+  height:110%;
+  object-fit:cover;
+
+  left:-5%;
+  top:-5%;
+
+  transition:transform .2s linear,
+             filter 1s ease;
+}
+body::after {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.35);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+.light-theme::after {
+  background: rgba(0,0,0,0.15);
 }
