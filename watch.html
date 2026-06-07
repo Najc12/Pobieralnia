@@ -34,12 +34,7 @@
 
   </header>
 
-  <title>Oglądanko</title>
 
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
 
 <section class="section">
 
@@ -78,29 +73,199 @@
   <div id="watch-content" style="display:none; width:100%;">
 
   <!-- WYSZUKIWARKA -->
+<div class="watch-filters">
+
+  <!-- LEWA STRONA -->
+  <div class="type-filter">
+
+    <button onclick="setType('all')">Wszystko</button>
+    <button onclick="setType('film')">Filmy</button>
+    <button onclick="setType('serial')">Seriale</button>
+
+  </div>
+
+  <!-- ŚRODEK -->
   <div class="search-wrapper">
 
     <input
       type="text"
       id="movie-search"
-      placeholder="Szukaj filmu..."
+      placeholder="Szukaj filmu lub serialu..."
       class="movie-search"
       onkeyup="searchMovies()"
     >
 
   </div>
 
+  <!-- PRAWA STRONA -->
+  <div class="genre-filter">
+
+    <select id="genre-filter" onchange="filterMovies()">
+      <option value="all">Wszystkie gatunki</option>
+      <option value="bajka">Bajki</option>
+      <option value="horror">Horrory</option>
+      <option value="akcja">Akcji</option>
+      <option value="sci-fi">Sci-fi</option>
+      <option value="familijny">Familijny</option>
+      <option value="fantasy">Fantasy</option>
+      <option value="komedia">Komedie</option>
+    </select>
+
+    <select id="year-filter" onchange="filterMovies()">
+      <option value="all">Wszystkie</option>
+      <option value="2026">2026</option>
+      <option value="2025">2025</option>
+      <option value="2024">2024</option>
+      <option value="2023">2023</option>
+      <option value="2021">2021</option>
+      <option value="2020">2020</option>
+      <option value="2019">2019</option>
+      <option value="2018">2018</option>
+      <option value="2017">2017</option>
+      <option value="2016">2016</option>
+      <option value="2015">2015</option>
+      <option value="2014">2014</option>
+      <option value="2013">2013</option>
+      <option value="2012">2012</option>
+      <option value="2011">2011</option>
+      <option value="2010">2010</option>
+      <option value="2009">2009</option>
+      <option value="2008">2008</option>
+      <option value="2007">2007</option>
+      <option value="2006">2006</option>
+      <option value="2005">2005</option>
+      <option value="2004">2004</option>
+      <option value="2003">2003</option>
+      <option value="2002">2002</option>
+      <option value="2001">2001</option>
+      <option value="2000">2000</option>
+      <option value="1999">1999</option>
+      <option value="1998">1998</option>
+      <option value="1997">1997</option>
+      <option value="1996">1996</option>
+      <option value="1995">1995</option>
+      <option value="1994">1994</option>
+      <option value="1993">1993</option>
+      <option value="1992">1992</option>
+      <option value="1991">1991</option>
+      <option value="1990">1990</option>
+      <option value="1989">1989</option>
+      <option value="1987">1987</option>
+      <option value="1986">1986</option>
+      <option value="1985">1985</option>
+      <option value="1984">1984</option>
+      <option value="1983">1983</option>
+      <option value="1982">1982</option>
+      <option value="1981">1981</option>
+      <option value="1980">1980</option>
+      <option value="1979">1979</option>
+      <option value="1978">1978</option>
+      <option value="1977">1977</option>
+      <option value="1976">1976</option>
+      <option value="1975">1975</option>
+      <option value="1974">1974</option>
+      <option value="1973">1973</option>
+      <option value="1972">1972</option>
+      <option value="1971">1971</option>
+      <option value="1970">1970</option>
+      <option value="1969">1969</option>
+      <option value="1968">1968</option>
+      <option value="1967">1967</option>
+      <option value="1966">1966</option>
+      <option value="1965">1965</option>
+      <option value="1964">1964</option>
+      <option value="1963">1963</option>
+      <option value="1962">1962</option>
+      <option value="1961">1961</option>
+      <option value="1960">1960</option>
+      <option value="1959">1959</option>
+      <option value="1958">1958</option>
+      <option value="1957">1957</option>
+      <option value="1956">1956</option>
+      <option value="1955">1955</option>
+      <option value="1954">1954</option>
+      <option value="1953">1953</option>
+      <option value="1952">1952</option>
+      <option value="1951">1951</option>
+      <option value="1950">1950</option>
+      <option value="1949">1949</option>
+      <option value="1948">1948</option>
+      <option value="1947">1947</option>
+      <option value="1946">1946</option>
+      <option value="1945">1945</option>
+      <option value="1944">1944</option>
+      <option value="1943">1943</option>
+      <option value="1942">1942</option>
+      <option value="1941">1941</option>
+      <option value="1940">1940</option>
+      <option value="1939">1939</option>
+      <option value="1938">1938</option>
+      <option value="1937">1937</option>
+      <option value="1936">1936</option>
+      <option value="1935">1935</option>
+      <option value="1934">1934</option>
+      <option value="1933">1933</option>
+      <option value="1932">1932</option>
+      <option value="1931">1931</option>
+      <option value="1930">1930</option>
+      <option value="1929">1929</option>
+      <option value="1928">1928</option>
+      <option value="1927">1927</option>
+      <option value="1926">1926</option>
+      <option value="1925">1925</option>
+      <option value="1924">1924</option>
+      <option value="1923">1923</option>
+      <option value="1922">1922</option>
+      <option value="1921">1921</option>
+      <option value="1920">1920</option>
+      <option value="1919">1919</option>
+      <option value="1918">1918</option>
+      <option value="1917">1917</option>
+      <option value="1916">1916</option>
+      <option value="1915">1915</option>
+      <option value="1914">1914</option>
+      <option value="1913">1913</option>
+      <option value="1912">1912</option>
+      <option value="1911">1911</option>
+      <option value="1910">1910</option>
+      <option value="1909">1909</option>
+      <option value="1908">1908</option>
+      <option value="1907">1907</option>
+      <option value="1906">1906</option>
+      <option value="1905">1905</option>
+      <option value="1904">1904</option>
+      <option value="1903">1903</option>
+      <option value="1902">1902</option>
+      <option value="1901">1901</option>
+      <option value="1900">1900</option>
+      <option value="1899">1899</option>
+      <option value="1898">1898</option>
+      <option value="1897">1897</option>
+      <option value="1896">1896</option>
+      <option value="1895">1895</option>
+
+
+    </select>
+
+  </div>
+
+</div>
 <!-- FILMY -->
 <div class="watch-grid">
                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="horror"
+  data-year="all"
+>
 
     <img
       src="NOWY FILM.png"
       alt="Film">
 
     <div class="text">
-      <h3>Wkrótnce</h3>
+      <h3>Wkrótce</h3>
     </div>
 
     <div class="watch-links">
@@ -115,16 +280,20 @@
    
 
   </div>
-
-  <!-- FILM 1 -->
-  <div class="watch-card">
+      <!-- FILM 1 -->
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2025"
+>
 
     <img
       src="https://fwcdn.pl/fpo/23/78/10082378/8224141.8.webp"
       alt="Film">
 
     <div class="text">
-      <h3>David (2025)</h3>
+      <h3>David</h3>
     </div>
 
     <!-- ROZWIJANE LINKI -->
@@ -144,7 +313,12 @@
   </div>
 
   <!-- FILM 2 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2026"
+>
 
     <img
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrBZsudHfXEZ6finAUPeYg0FXugcuQWDXYInWEgYcbwimyKOEZc-xmQzzJx7E1orboKZPC&s=10"
@@ -167,7 +341,12 @@
 
   </div>
     <!-- FILM 3 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2025"
+>
 
     <img
       src="https://fwcdn.pl/fpo/30/81/603081/8214512.3.jpg"
@@ -192,7 +371,12 @@
 
 
   <!-- FILM 4 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2009"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/212.jpg"
@@ -215,7 +399,12 @@
 
   </div>
     <!-- FILM 5 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2022"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/57827.jpg"
@@ -238,7 +427,12 @@
 
   </div>
     <!-- FILM 6 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="horror"
+  data-year="2023"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/61025.jpg"
@@ -262,7 +456,12 @@
 
   </div>
     <!-- FILM 7 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="horror"
+  data-year="2025"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/67433.jpg"
@@ -285,7 +484,12 @@
 
   </div>
     <!-- FILM 8 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/52991.jpg"
@@ -308,7 +512,12 @@
 
   </div>
     <!-- FILM 9 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2014"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/3883.jpg"
@@ -331,7 +540,12 @@
 
   </div>
   <!-- FILM 10 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2013"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/3882.jpg"
@@ -354,7 +568,12 @@
 
   </div>
    <!-- FILM 11 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2012"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/219.jpg"
@@ -377,7 +596,12 @@
 
   </div>
    <!-- FILM 13 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2001"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/154.jpg"
@@ -400,7 +624,12 @@
 
   </div>
    <!-- FILM 14 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2003"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/155.jpg"
@@ -423,7 +652,12 @@
 
   </div>
    <!-- FILM 15 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2002"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/51423.jpg"
@@ -446,7 +680,12 @@
 
   </div>
    <!-- FILM 16 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2024"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/64367.jpg"
@@ -469,7 +708,12 @@
 
   </div>
      <!-- FILM 17 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2022"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/56147.jpg"
@@ -481,7 +725,7 @@
 
     <div class="watch-links">
 
-      <a href="https://jessicayeahcatch.com/access/eyJpdiI6Ilcwa2xsOWZZOWJ0Nlh6YkI0cjBWUFE9PSIsInZhbHVlIjoiYXZhZlZoNXZ5YkptV2lQcTZtdkFCdVU4ZER0L0N4TkNDTHU0cC92VVhHLzhkelFSZWJUQ0duTUxIMkNoWDM2bXJIM3diWUxwUUtZTVIxUUNiYnFkWlE4bG0remNZL0FFVEFVZFhvMDlOeGs9IiwibWFjIjoiZjRmZTk2Y2JlMTEwN2RjY2Q2NzZiYjk0Y2U1OWE1OWEzMjc2OTA4ZmYwNGQ1MWNlNGI3OGU5N2EyMDUyMjU5YiIsInRhZyI6IiJ9?o=1"
+      <a href="https://jessicayeahcatch.com/e/1x1b92mumsfk"
          target="_blank">
          jessicayeahcatch
       </a>
@@ -492,7 +736,12 @@
 
   </div>
      <!-- FILM 18 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2007"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/37278.jpg"
@@ -515,7 +764,12 @@
 
   </div>
        <!-- FILM 18 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2008"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/484.jpg"
@@ -538,7 +792,12 @@
 
   </div>
          <!-- FILM 18 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2008"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/25694.jpg"
@@ -550,7 +809,7 @@
 
     <div class="watch-links">
 
-      <a href="https://jessicayeahcatch.com/access/eyJpdiI6Ikh6S1RMVHJqakVoTWV4UWxEWC9BOHc9PSIsInZhbHVlIjoibXBxQlJLNmlvclNLSGF5dHdGVklOSmdTVURnOXJrY0lMRXlPTUpjMmpEeExwK2hMVjZqOGlkZDlaMnNMODh0cXJUOHlmRnFBUkk0aVFUZFFablpmS20rejh3VVdqWU4rQmpnTUNoVWNTYms9IiwibWFjIjoiOGVkNTIxZGY1OTg0NmZlYzZmOTU1NzhhYjgxYmU4ZTAwOWYzMTA4OTRmZjBiMmFkMmViNmE3YjBmNDJmMWFmYSIsInRhZyI6IiJ9?o=1"
+      <a href="https://jessicayeahcatch.com/e/grpzb94sztkq"
          target="_blank">
          jessicayeahcatch
       </a>
@@ -561,7 +820,12 @@
 
   </div>
          <!-- FILM 18 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2007"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/23558.jpg"
@@ -573,7 +837,7 @@
 
     <div class="watch-links">
 
-      <a href="https://jessicayeahcatch.com/access/eyJpdiI6Imw5bDM0NDR2YzZNNmZkQnNhNEhCUlE9PSIsInZhbHVlIjoieDFWNTVXNGJrUkgwYTVLcWFoNXJmVnN3OHRXTmhXNXNxNDRQL1c1b0RNdUJQa1Qwc1h0OWFucEducW1mamFTV09iand4cnBWekpFM2VyaUhZSjdaK0h2SUtOaFF3V1djSytibmppajRUZ1E9IiwibWFjIjoiMDk0OGQ0N2ZjZWRlZmJiYmE3NjQ1ODlhMzYwNjFmZTA3YzRhNmJiNTkwNmUyNTk5MDI3ODFlNzk0Yjk0ZGI3YyIsInRhZyI6IiJ9?o=1"
+      <a href="https://jessicayeahcatch.com/e/fjzh7txcyn1q"
          target="_blank">
          jessicayeahcatch
       </a>
@@ -584,7 +848,12 @@
 
   </div>
      <!-- FILM 19 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="1999"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/33499.jpg"
@@ -607,7 +876,12 @@
 
   </div>
      <!-- FILM 20 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2023"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/61449.jpg"
@@ -630,7 +904,12 @@
 
   </div>
      <!-- FILM 21 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2023"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/61314.jpg"
@@ -653,7 +932,12 @@
 
   </div>
      <!-- FILM 22 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2014"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/60979.jpg"
@@ -676,7 +960,12 @@
 
   </div>
      <!-- FILM 23 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2019"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/60972.jpg"
@@ -699,7 +988,12 @@
 
   </div>
      <!-- FILM 24 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2013"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/60905.jpg"
@@ -722,7 +1016,12 @@
 
   </div>
      <!-- FILM 25 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/474.jpg"
@@ -745,7 +1044,12 @@
 
   </div>
      <!-- FILM 26 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2002"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/38373.jpg"
@@ -768,7 +1072,12 @@
 
   </div>
      <!-- FILM 27 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2003"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/52866.jpg"
@@ -791,7 +1100,12 @@
 
   </div>
      <!-- FILM 28 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1045.jpg"
@@ -814,7 +1128,12 @@
 
   </div>
      <!-- FILM 29 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2001"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1362.jpg"
@@ -837,7 +1156,12 @@
 
   </div>
      <!-- FILM 30 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2022"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/57681.jpg"
@@ -860,7 +1184,12 @@
 
   </div>
      <!-- FILM 31 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2022"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/58514.jpg"
@@ -883,7 +1212,12 @@
 
   </div>
      <!-- FILM 32 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2019"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/58384.jpg"
@@ -906,14 +1240,19 @@
 
   </div>
      <!-- FILM 33 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1759.jpg"
       alt="Film">
 
     <div class="text">
-      <h3>Mała syrenka(2018)</h3>
+      <h3>Mała syrenka</h3>
     </div>
 
     <div class="watch-links">
@@ -929,7 +1268,12 @@
 
   </div>
      <!-- FILM 34 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2022"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/57578.jpg"
@@ -952,7 +1296,12 @@
 
   </div>
      <!-- FILM 35 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2022"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/57496.jpg"
@@ -975,7 +1324,12 @@
 
   </div>
      <!-- FILM 36 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="horror"
+  data-year="2025"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/67860.jpg"
@@ -998,7 +1352,12 @@
 
   </div>
      <!-- FILM 37 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/52940.jpg"
@@ -1021,7 +1380,12 @@
 
   </div>
      <!-- FILM 38 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/55564.jpg"
@@ -1044,7 +1408,12 @@
 
   </div>
      <!-- FILM 39 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/56225.jpg"
@@ -1067,7 +1436,12 @@
 
   </div>
      <!-- FILM 40 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/56133.jpg"
@@ -1090,7 +1464,12 @@
 
   </div>
      <!-- FILM 41 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2017"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/4i1bcf8mxomy.jpg"
@@ -1113,7 +1492,12 @@
 
   </div>
      <!-- FILM 42 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2013"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/7944.jpg"
@@ -1136,7 +1520,12 @@
 
   </div>
      <!-- FILM 43 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2007"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/4013.jpg"
@@ -1159,7 +1548,12 @@
 
   </div>
      <!-- FILM 44 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/53507.jpg"
@@ -1182,7 +1576,12 @@
 
   </div>
      <!-- FILM 45 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2017"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1799.jpg"
@@ -1205,7 +1604,12 @@
 
   </div>
      <!-- FILM 46 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2013"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/859.jpg"
@@ -1228,7 +1632,12 @@
 
   </div>
      <!-- FILM 47 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="2006"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/10mjhy2lowh8.jpg"
@@ -1251,7 +1660,12 @@
 
   </div>
      <!-- FILM 48 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2026"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/68844.jpg"
@@ -1274,7 +1688,12 @@
 
   </div>
        <!-- FILM 48 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2013"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/1m9n2wg9deqv.jpg"
@@ -1297,7 +1716,12 @@
 
   </div>
        <!-- FILM 48 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2026"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/68567.jpg"
@@ -1320,7 +1744,12 @@
 
   </div>
      <!-- FILM 49 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="horror"
+  data-year="2026"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/0m1ja8xk5b2u.jpg"
@@ -1343,7 +1772,12 @@
 
   </div>
      <!-- FILM 50 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="horror"
+  data-year="2019"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/0uhgv2opvy69.jpg"
@@ -1366,7 +1800,12 @@
 
   </div>
      <!-- FILM 51 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="horror"
+  data-year="2018"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/zx5spz0ejety.jpg"
@@ -1389,7 +1828,12 @@
 
   </div>
      <!-- FILM 52 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2026"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/68269.jpg"
@@ -1412,7 +1856,12 @@
 
   </div>
      <!-- FILM 53 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2026"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/67850.jpg"
@@ -1435,7 +1884,12 @@
 
   </div>
      <!-- FILM 54 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2026"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/68914.jpg"
@@ -1458,7 +1912,12 @@
 
   </div>
      <!-- FILM 55 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2026"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/68901.jpg"
@@ -1481,7 +1940,12 @@
 
   </div>
      <!-- FILM 56 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/55228.jpg"
@@ -1504,7 +1968,12 @@
 
   </div>
        <!-- FILM 57 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2023"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/59641.jpg"
@@ -1527,7 +1996,12 @@
 
   </div>
        <!-- FILM 58 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2020"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/53642.jpg"
@@ -1550,7 +2024,12 @@
 
   </div>
        <!-- FILM 59 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="2020"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/53590.jpg"
@@ -1573,7 +2052,12 @@
 
   </div>
        <!-- FILM 60 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2001"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1635.jpg"
@@ -1596,7 +2080,12 @@
 
   </div>
          <!-- FILM 60 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2004"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/4943.jpg"
@@ -1619,7 +2108,12 @@
 
   </div>
          <!-- FILM 60 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2007"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/923.jpg"
@@ -1642,7 +2136,12 @@
 
   </div>
          <!-- FILM 60 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/4944.jpg"
@@ -1665,7 +2164,12 @@
 
   </div>
        <!-- FILM 61 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2008"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/926.jpg"
@@ -1688,7 +2192,12 @@
 
   </div>
        <!-- FILM 62 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2011"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/39741.jpg"
@@ -1711,7 +2220,12 @@
 
   </div>
        <!-- FILM 63 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/18446.jpg"
@@ -1734,7 +2248,12 @@
 
   </div>
          <!-- FILM 63 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2024"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/62013.jpg"
@@ -1757,7 +2276,12 @@
 
   </div>
        <!-- FILM 64 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/52378.jpg"
@@ -1780,7 +2304,12 @@
 
   </div>
        <!-- FILM 65 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2019"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/y6h7plfuk6qr.jpg"
@@ -1803,7 +2332,12 @@
 
   </div>
        <!-- FILM 66 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2020"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/52385.jpg"
@@ -1826,7 +2360,12 @@
 
   </div>
        <!-- FILM 67 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2002"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/39552.jpg"
@@ -1849,7 +2388,12 @@
 
   </div>
        <!-- FILM 68 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="1999"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/50471.jpg"
@@ -1872,7 +2416,12 @@
 
   </div>
        <!-- FILM 69 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2012"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/368.jpg"
@@ -1895,7 +2444,12 @@
 
   </div>
        <!-- FILM 70 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2014"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/657.jpg"
@@ -1918,7 +2472,12 @@
 
   </div>
        <!-- FILM 71 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2015"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/51665.jpg"
@@ -1930,9 +2489,9 @@
 
     <div class="watch-links">
 
-      <a href="https://f16px.com/e/4qyshb02f5id"
+      <a href="https://sb1254w9megshle.org/e/4qyshb02f5id"
          target="_blank">
-         f16px
+         link
       </a>
 
     </div>
@@ -1941,7 +2500,12 @@
 
   </div>
        <!-- FILM 72 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2020"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/51473.jpg"
@@ -1964,7 +2528,12 @@
 
   </div>
        <!-- FILM 73 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/50777.jpg"
@@ -1987,7 +2556,12 @@
 
   </div>
        <!-- FILM 74 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2019"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/25976.jpg"
@@ -2010,7 +2584,12 @@
 
   </div>
        <!-- FILM 75 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2002"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/925.jpg"
@@ -2033,7 +2612,12 @@
 
   </div>
        <!-- FILM 76 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2009"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/25160.jpg"
@@ -2056,7 +2640,12 @@
 
   </div>
        <!-- FILM 77 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2012"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/857.jpg"
@@ -2079,7 +2668,12 @@
 
   </div>
        <!-- FILM 78 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/21960.jpg"
@@ -2102,7 +2696,12 @@
 
   </div>
        <!-- FILM 79 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1049.jpg"
@@ -2125,7 +2724,12 @@
 
   </div>
        <!-- FILM 80 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2014"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1148.jpg"
@@ -2148,7 +2752,12 @@
 
   </div>
        <!-- FILM 81 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2019"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/8853.jpg"
@@ -2171,7 +2780,12 @@
 
   </div>
        <!-- FILM 82 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/52877.jpg"
@@ -2194,7 +2808,12 @@
 
   </div>
        <!-- FILM 83 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2024"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/62154.jpg"
@@ -2217,7 +2836,12 @@
 
   </div>
        <!-- FILM 84 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2017"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/5376.jpg"
@@ -2240,7 +2864,12 @@
 
   </div>
        <!-- FILM 85 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2005"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/3963.jpg"
@@ -2263,7 +2892,12 @@
 
   </div>
        <!-- FILM 86 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2020"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/48392.jpg"
@@ -2275,9 +2909,9 @@
 
     <div class="watch-links">
 
-      <a href="https://f16px.com/e/2uzy8vagalmu"
+      <a href="https://fileone.tv/v/63s5spr0466o1"
          target="_blank">
-         f16px
+         link_1
       </a>
 
     </div>
@@ -2286,7 +2920,12 @@
 
   </div>
        <!-- FILM 87 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2011"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/48659.jpg"
@@ -2309,7 +2948,12 @@
 
   </div>
          <!-- FILM 88 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2019"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/48094.jpg"
@@ -2332,7 +2976,12 @@
 
   </div>
          <!-- FILM 89 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2019"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/46991.jpg"
@@ -2355,7 +3004,12 @@
 
   </div>
          <!-- FILM 90 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2014"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/s1zyoq1z805q.jpg"
@@ -2378,7 +3032,12 @@
 
   </div>
          <!-- FILM 91 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="2013"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/313.jpg"
@@ -2401,7 +3060,12 @@
 
   </div>
          <!-- FILM 92 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2015"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/60967.jpg"
@@ -2424,7 +3088,12 @@
 
   </div>
          <!-- FILM 93 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2000"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/7077.jpg"
@@ -2447,7 +3116,12 @@
 
   </div>
          <!-- FILM 94 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2019"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/49042.jpg"
@@ -2470,7 +3144,12 @@
 
   </div>
          <!-- FILM 95 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/522.jpg"
@@ -2493,7 +3172,12 @@
 
   </div>
          <!-- FILM 96 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2025"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/67348.jpg"
@@ -2516,7 +3200,12 @@
 
   </div>
          <!-- FILM 97 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2015"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/29689.jpg"
@@ -2539,7 +3228,12 @@
 
   </div>
          <!-- FILM 98 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2005"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/928.jpg"
@@ -2562,7 +3256,12 @@
 
   </div>
          <!-- FILM 99 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2008"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/48581.jpg"
@@ -2585,7 +3284,12 @@
 
   </div>
          <!-- FILM 100 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/866.jpg"
@@ -2608,7 +3312,12 @@
 
   </div>
          <!-- FILM 101 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2024"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/64205.jpg"
@@ -2631,7 +3340,12 @@
 
   </div>
          <!-- FILM 102 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2020"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/50027.jpg"
@@ -2654,7 +3368,12 @@
 
   </div>
            <!-- FILM 102 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2020"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/58458.jpg"
@@ -2677,7 +3396,12 @@
 
   </div>
          <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2007"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/48933.jpg"
@@ -2700,7 +3424,12 @@
 
   </div>
            <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2022"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/57601.jpg"
@@ -2723,7 +3452,12 @@
 
   </div>
              <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="horror"
+  data-year="2012"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/9643.jpg"
@@ -2746,7 +3480,12 @@
 
   </div>
                <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="1964"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/6794.jpg"
@@ -2769,7 +3508,12 @@
 
   </div>
                  <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/3964.jpg"
@@ -2792,7 +3536,12 @@
 
   </div>
                    <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2005"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/i17r3h58hmcn.jpg"
@@ -2815,7 +3564,12 @@
 
   </div>
                      <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/29922.jpg"
@@ -2838,7 +3592,12 @@
 
   </div>
                        <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2023"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/54839.jpg"
@@ -2861,7 +3620,12 @@
 
   </div>
                          <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2006"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/3328.jpg"
@@ -2884,7 +3648,12 @@
 
   </div>
                            <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2014"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/234.jpg"
@@ -2907,7 +3676,12 @@
 
   </div>
                              <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2015"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/545.jpg"
@@ -2930,7 +3704,12 @@
 
   </div>
                                <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/9.jpg"
@@ -2953,7 +3732,12 @@
 
   </div>
                                  <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="1982"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/34904.jpg"
@@ -2976,7 +3760,12 @@
 
   </div>
                                    <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2017"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/487.jpg"
@@ -2999,7 +3788,12 @@
 
   </div>
                                      <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2008"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/223.jpg"
@@ -3022,7 +3816,12 @@
 
   </div>
                                        <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2012"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/229.jpg"
@@ -3045,7 +3844,12 @@
 
   </div>
                                          <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2014"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/266.jpg"
@@ -3068,7 +3872,12 @@
 
   </div>
                                            <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2005"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/25921.jpg"
@@ -3091,7 +3900,12 @@
 
   </div>
                                              <!-- FILM 103 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/752.jpg"
@@ -3114,7 +3928,12 @@
 
   </div>
          <!-- FILM 104 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2009"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/25760.jpg"
@@ -3137,7 +3956,12 @@
 
   </div>
            <!-- FILM 104 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1107.jpg"
@@ -3160,7 +3984,12 @@
 
   </div>
          <!-- FILM 105 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2012"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/25802.jpg"
@@ -3183,7 +4012,12 @@
 
   </div>
          <!-- FILM 106 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2019"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/46458.jpg"
@@ -3206,7 +4040,12 @@
 
   </div>
          <!-- FILM 107 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2019"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/46460.jpg"
@@ -3229,7 +4068,12 @@
 
   </div>
          <!-- FILM 108 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2017"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/45785.jpg"
@@ -3252,7 +4096,12 @@
 
   </div>
          <!-- FILM 109 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2013"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/45388.jpg"
@@ -3275,7 +4124,12 @@
 
   </div>
          <!-- FILM 110 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/44578.jpg"
@@ -3298,7 +4152,12 @@
 
   </div>
          <!-- FILM 111 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="horror"
+  data-year="1986"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/5149.jpg"
@@ -3321,7 +4180,12 @@
 
   </div>
          <!-- FILM 112 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2009"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/40359.jpg"
@@ -3344,7 +4208,12 @@
 
   </div>
          <!-- FILM 113 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2013"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/40360.jpg"
@@ -3367,7 +4236,12 @@
 
   </div>
            <!-- FILM 113 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2007"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/4172.jpg"
@@ -3390,7 +4264,12 @@
 
   </div>
              <!-- FILM 113 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2006"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1559.jpg"
@@ -3413,7 +4292,12 @@
 
   </div>
                <!-- FILM 113 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2011"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/856.jpg"
@@ -3436,7 +4320,12 @@
 
   </div>
                  <!-- FILM 113 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2017"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1558.jpg"
@@ -3459,7 +4348,12 @@
 
   </div>
                    <!-- FILM 113 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2004"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/22544.jpg"
@@ -3482,7 +4376,12 @@
 
   </div>
                      <!-- FILM 113 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/938.jpg"
@@ -3505,7 +4404,12 @@
 
   </div>
                        <!-- FILM 113 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="2005"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/36880.jpg"
@@ -3528,7 +4432,12 @@
 
   </div>
            <!-- FILM 113 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2012"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/126.jpg"
@@ -3551,7 +4460,12 @@
 
   </div>
              <!-- FILM 113 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2015"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1657.jpg"
@@ -3574,7 +4488,12 @@
 
   </div>
                <!-- FILM 113 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1636.jpg"
@@ -3597,7 +4516,12 @@
 
   </div>
                  <!-- FILM 113 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/55346.jpg"
@@ -3620,7 +4544,12 @@
 
   </div>
          <!-- FILM 114 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2015"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/518.jpg"
@@ -3643,7 +4572,12 @@
 
   </div>
            <!-- FILM 114 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2017"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/5098.jpg"
@@ -3666,7 +4600,12 @@
 
   </div>
              <!-- FILM 114 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2024"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/62887.jpg"
@@ -3689,7 +4628,12 @@
 
   </div>
                <!-- FILM 114 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/9857.jpg"
@@ -3712,7 +4656,12 @@
 
   </div>
          <!-- FILM 115 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2000"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/37100.jpg"
@@ -3735,7 +4684,12 @@
 
   </div>
          <!-- FILM 116 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="1996"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/24374.jpg"
@@ -3758,7 +4712,12 @@
 
   </div>
          <!-- FILM 117 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="horror"
+  data-year="1988"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/854.jpg"
@@ -3781,7 +4740,12 @@
 
   </div>
          <!-- FILM 118 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="horror"
+  data-year="1991"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/853.jpg"
@@ -3804,7 +4768,12 @@
 
   </div>
          <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="horror"
+  data-year="1992"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/8136.jpg"
@@ -3827,7 +4796,12 @@
 
   </div>
            <!-- FILM 120 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2026"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/68389.jpg"
@@ -3850,7 +4824,12 @@
 
   </div>
            <!-- FILM 121 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2024"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/63731.jpg"
@@ -3873,7 +4852,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2013"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/656.jpg"
@@ -3896,7 +4880,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/844.jpg"
@@ -3919,7 +4908,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2019"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/9188.jpg"
@@ -3942,7 +4936,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="2026"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/3mb2v44y6mq3.jpg"
@@ -3965,7 +4964,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2014"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/3034.jpg"
@@ -3988,7 +4992,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2002"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/658.jpg"
@@ -4011,7 +5020,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2004"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/799.jpg"
@@ -4034,7 +5048,12 @@
 
   </div>
                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2004"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/557.jpg"
@@ -4057,7 +5076,12 @@
 
   </div>
                    <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2012"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/250.jpg"
@@ -4080,7 +5104,12 @@
 
   </div>
                      <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2014"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/679.jpg"
@@ -4103,7 +5132,12 @@
 
   </div>
                        <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2017"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/677.jpg"
@@ -4126,7 +5160,12 @@
 
   </div>
                          <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2019"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/9277.jpg"
@@ -4149,7 +5188,12 @@
 
   </div>
                            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/55127.jpg"
@@ -4172,7 +5216,12 @@
 
   </div>
                              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/3765.jpg"
@@ -4195,7 +5244,12 @@
 
   </div>
                                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2023"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/59443.jpg"
@@ -4218,7 +5272,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2017"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/lisef8dqw15d.jpg"
@@ -4241,7 +5300,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/55193.jpg"
@@ -4264,7 +5328,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2018"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/qyj193d4gs4p.jpg"
@@ -4287,7 +5356,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/506.jpg"
@@ -4310,7 +5384,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2023"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/tt1av0kfl359.jpg"
@@ -4333,7 +5412,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2006"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/v8kta9j47h0t.jpg"
@@ -4356,7 +5440,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2022"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/d4lcpwmsyeil.jpg"
@@ -4379,7 +5468,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2023"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/46e957vnb7s8.jpg"
@@ -4402,7 +5496,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2014"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/nrzv6xf72xhy.jpg"
@@ -4425,7 +5524,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2015"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/16619.jpg"
@@ -4448,7 +5552,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="horror"
+  data-year="1984"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/8242.jpg"
@@ -4471,7 +5580,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="horror"
+  data-year="1990"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/8241.jpg"
@@ -4494,7 +5608,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2009"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/14966.jpg"
@@ -4520,7 +5639,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/871.jpg"
@@ -4543,7 +5667,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2001"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/867.jpg"
@@ -4566,7 +5695,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2013"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/9094.jpg"
@@ -4589,7 +5723,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2003"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/876.jpg"
@@ -4612,7 +5751,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/41022.jpg"
@@ -4635,7 +5779,12 @@
 
   </div>
                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2013"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/858.jpg"
@@ -4658,7 +5807,12 @@
 
   </div>
                    <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2019"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/25268.jpg"
@@ -4681,7 +5835,12 @@
 
   </div>
                      <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2012"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1102.jpg"
@@ -4704,7 +5863,12 @@
 
   </div>
                        <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2012"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/44983.jpg"
@@ -4727,7 +5891,12 @@
 
   </div>
                          <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2011"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/40382.jpg"
@@ -4750,7 +5919,12 @@
 
   </div>
                            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2014"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/46594.jpg"
@@ -4773,7 +5947,12 @@
 
   </div>
                              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/37227.jpg"
@@ -4796,7 +5975,12 @@
 
   </div>
                                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2009"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1150.jpg"
@@ -4819,7 +6003,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2024"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/62751.jpg"
@@ -4842,7 +6031,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2022"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/55714.jpg"
@@ -4865,7 +6059,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/53328.jpg"
@@ -4888,7 +6087,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/33.jpg"
@@ -4911,7 +6115,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2001"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/137.jpg"
@@ -4934,7 +6143,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2002"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/138.jpg"
@@ -4957,7 +6171,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2004"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/139.jpg"
@@ -4980,7 +6199,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2005"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/140.jpg"
@@ -5003,7 +6227,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2007"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/141.jpg"
@@ -5026,7 +6255,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2009"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/142.jpg"
@@ -5049,7 +6283,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/143.jpg"
@@ -5072,7 +6311,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2011"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/144.jpg"
@@ -5095,7 +6339,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/875.jpg"
@@ -5118,7 +6367,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/2664.jpg"
@@ -5141,7 +6395,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2005"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/38333.jpg"
@@ -5164,7 +6423,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2008"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/9b0y56ym91sb.jpg"
@@ -5187,7 +6451,12 @@
 
   </div>
            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2010"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/obul3wqoz9gg.jpg"
@@ -5210,7 +6479,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2018"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/92q4v7ncxwm4.jpg"
@@ -5233,7 +6507,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2023"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/bps7cqpba94g.jpg"
@@ -5256,7 +6535,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2017"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/jqe8tvfdphom.jpg"
@@ -5279,7 +6563,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2001"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/xz89495ay7wu.jpg"
@@ -5302,7 +6591,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2019"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/rjtahjirqobe.jpg"
@@ -5325,7 +6619,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2006"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/5wagay92daou.jpg"
@@ -5348,7 +6647,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2003"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/37.jpg"
@@ -5371,7 +6675,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2011"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/1no8h47xv3y4.jpg"
@@ -5394,7 +6703,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2013"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/tdhj1j2ksd7e.jpg"
@@ -5417,7 +6731,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2015"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/7abixk6xzzhn.jpg"
@@ -5440,7 +6759,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2017"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/yvoxg3827w0n.jpg"
@@ -5463,7 +6787,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2021"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/f4y1pqnw0sx6.jpg"
@@ -5486,7 +6815,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2023"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/wmwpe95o65rs.jpg"
@@ -5509,7 +6843,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/31.jpg"
@@ -5532,7 +6871,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2012"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/5619.jpg"
@@ -5555,7 +6899,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2014"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/549.jpg"
@@ -5578,7 +6927,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2023"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/60684.jpg"
@@ -5601,7 +6955,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="2023"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/58910.jpg"
@@ -5624,7 +6983,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2023"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/61470.jpg"
@@ -5647,7 +7011,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="1987"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/22216.jpg"
@@ -5670,7 +7039,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="1990"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1483.jpg"
@@ -5693,7 +7067,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1733.jpg"
@@ -5716,7 +7095,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/40675.jpg"
@@ -5739,7 +7123,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2004"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/32753.jpg"
@@ -5762,7 +7151,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2007"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/25361.jpg"
@@ -5785,7 +7179,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2000"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/634.jpg"
@@ -5808,7 +7207,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2004"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/507.jpg"
@@ -5831,7 +7235,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/494.jpg"
@@ -5854,7 +7263,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2007"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/553.jpg"
@@ -5877,7 +7291,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2002"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/910.jpg"
@@ -5900,7 +7319,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2004"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/dymy7k8h01v8.jpg"
@@ -5923,7 +7347,12 @@
 
   </div>
              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2012"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/22352.jpg"
@@ -5946,7 +7375,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1685.jpg"
@@ -5969,7 +7403,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/54775.jpg"
@@ -5992,7 +7431,12 @@
 
   </div>
                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="1995"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1730.jpg"
@@ -6015,7 +7459,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2017"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/11.jpg"
@@ -6038,7 +7487,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2019"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/27227.jpg"
@@ -6061,7 +7515,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2021"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/2s53q161w1q8.jpg"
@@ -6084,7 +7543,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2008"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/hzb6i0gqq8r8.jpg"
@@ -6107,7 +7571,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/671.jpg"
@@ -6130,7 +7599,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2007"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/644.jpg"
@@ -6153,7 +7627,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2014"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/230.jpg"
@@ -6176,7 +7655,12 @@
 
   </div>
                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/10.jpg"
@@ -6199,7 +7683,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="1999"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/503.jpg"
@@ -6222,7 +7711,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2003"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/640.jpg"
@@ -6245,7 +7739,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2003"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/804.jpg"
@@ -6268,7 +7767,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/55154.jpg"
@@ -6291,7 +7795,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2002"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1023.jpg"
@@ -6314,7 +7823,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="1993"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/9816.jpg"
@@ -6337,7 +7851,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/38926.jpg"
@@ -6360,7 +7879,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/3634.jpg"
@@ -6383,7 +7907,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="serial"
+  data-genre="akcja"
+  data-year="2022"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/5821-series.jpg"
@@ -6395,19 +7924,19 @@
 
     <div class="watch-links">
 
-      <a href="https://jessicayeahcatch.com/access/eyJpdiI6IjFJMnRYRXdlOEQ4V2NiMGRjdHJIZWc9PSIsInZhbHVlIjoiZ0lRdTJ4UlJQd1g1SGhiMExYeUVKWDBuTTlhTG1mL0EzR0h1eFltOVpVaUFSWHpVWGJVTjFQaXlKSHhEZm5QVWVTY0IvNGJtejVydzB1N2FoYlQyckg1c2lsYisxWVVTOGMveFhmc3d3Wlk9IiwibWFjIjoiOTA4Y2E4ZTlmOTE3MmM3NzAzMzE0MDVkMDYxZTQ3YjI4ZGM0ZDFmZDgxNmFkNTg3YTRkODJlNmQ4NmRkNmRhYyIsInRhZyI6IiJ9?o=1"
+      <a href="https://jessicayeahcatch.com/e/dfxond6zbthv"
          target="_blank">
          odc.1
       </a>
-            <a href="https://jessicayeahcatch.com/access/eyJpdiI6IkVVZ3pvNTFNSE9GWDRnbU1FV1hXREE9PSIsInZhbHVlIjoic1RoVnJuRFZ3TmRta0Y3S2dSbHNFbm1zZGpIR0w2bTlucTM1RGUwazBFY3NySVlCcjhMcGdvaHJNQlhWdnI0N2xyTk96N0ZrYURQOHlaRno4blE2UXVTcnVKV0doQm9tOSt6R3dzdm5XdFE9IiwibWFjIjoiODA3ODg3ODM3NTZkNjdhOTJmZDMwZjM5NjdmZTZhNjg5ZTQ3YmEzZTQ2YWNhOTkxY2IxZmY3ZmVjYTI4NjNiMCIsInRhZyI6IiJ9?o=1"
+            <a href="https://jessicayeahcatch.com/e/bmoz6swqrefi"
          target="_blank">
          odc.2
       </a>
-            <a href="https://jessicayeahcatch.com/access/eyJpdiI6Ilh6WGwyd040SG5mdGE2ME5DWFQra3c9PSIsInZhbHVlIjoieW9MaVo3OUkwQlBSVHBCS2wwWHdIRG80SFZ2NEdFT3BvRkFCaHd1cktxOUhiUVJZTzRUVjcwVDJ2YnJUY01rYjl0RzVZRWVYajdjMjBRREltaVUvdGdRZWdhejlqY3JLdXJCZWhYSlpCYlE9IiwibWFjIjoiZTBjOTQxMzRiYjRmZWFlNjdmYjdmMDU1YTA3MjdiODdhZDdiMjQ5Y2I3YzY0ZmZjOTQyNTE1YWI1MmVmYTA5NCIsInRhZyI6IiJ9?o=1"
+            <a href="https://jessicayeahcatch.com/e/x1qnsunwf6hy"
          target="_blank">
          odc.3
       </a>
-            <a href="https://jessicayeahcatch.com/access/eyJpdiI6IkJKd0IvMldpYm95aEhWeXJMWTVNWWc9PSIsInZhbHVlIjoia1JkK1RaaXkyNXpLaVhOcnFKczJ2S0xjWGpxZ1N3V3BkTEVjc1RKaHl1R2NLaFd0eUxvc2lqV0ZxL0FEKzFzR0FBcXdwUmIydHdoaVpnYjExblhSMndHeUhBUmhBZXNUelVTdjNhd1ZJS3M9IiwibWFjIjoiNTA2NmVkMWJlZTcxYzM1NDJmOTAyNjgyMzc3M2ViMDQ3NGMyOTdlODZhNmU3Y2E3YWEzYjBhYmYzYmYwMDg1NiIsInRhZyI6IiJ9?o=1"
+            <a href="https://jessicayeahcatch.com/e/ul1fdmz13pn3"
          target="_blank">
          odc.4
       </a>
@@ -6422,6 +7951,10 @@
             <a href="https://vrra.top/e/so2xnocl"
          target="_blank">
          odc.7
+         </a>
+            <a href="https://jessicayeahcatch.com/e/45h9c9sankgr"
+         target="_blank">
+         odc.7
       </a>
             <a href="https://jessicayeahcatch.com/e/drfbpapblox5"
          target="_blank">
@@ -6434,7 +7967,12 @@
 
   </div>
                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2023"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/60026.jpg"
@@ -6457,7 +7995,12 @@
 
   </div>
                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2008"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/23085.jpg"
@@ -6480,7 +8023,12 @@
 
   </div>
                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2012"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/22930.jpg"
@@ -6503,7 +8051,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2017"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/32504.jpg"
@@ -6526,7 +8079,12 @@
 
   </div>
                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2000"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1415.jpg"
@@ -6549,7 +8107,12 @@
 
   </div>
                    <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2003"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/35151.jpg"
@@ -6572,7 +8135,12 @@
 
   </div>
                      <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2019"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/25159.jpg"
@@ -6595,7 +8163,12 @@
 
   </div>
                        <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2005"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/673.jpg"
@@ -6618,7 +8191,12 @@
 
   </div>
                          <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/483.jpg"
@@ -6641,7 +8219,12 @@
 
   </div>
                            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/864.jpg"
@@ -6664,7 +8247,12 @@
 
   </div>
                              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/40853.jpg"
@@ -6687,7 +8275,12 @@
 
   </div>
                                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/498.jpg"
@@ -6710,7 +8303,12 @@
 
   </div>
                                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2013"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/559.jpg"
@@ -6733,7 +8331,12 @@
 
   </div>
                                    <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="2015"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/649.jpg"
@@ -6756,7 +8359,12 @@
 
   </div>
                                      <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/22184.jpg"
@@ -6779,7 +8387,12 @@
 
   </div>
                                        <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="1995"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1425.jpg"
@@ -6802,7 +8415,12 @@
 
   </div>
                                          <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2003"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/7482.jpg"
@@ -6825,7 +8443,12 @@
 
   </div>
                                            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1196.jpg"
@@ -6848,7 +8471,12 @@
 
   </div>
                                              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="1998"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/199.jpg"
@@ -6871,7 +8499,12 @@
 
   </div>
                                                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="2001"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/829.jpg"
@@ -6894,7 +8527,12 @@
 
   </div>
                                                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="2007"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1432.jpg"
@@ -6917,7 +8555,12 @@
 
   </div>
                                                    <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="1984"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/41860.jpg"
@@ -6940,7 +8583,12 @@
 
   </div>
                                                      <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="1987"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1346.jpg"
@@ -6963,7 +8611,12 @@
 
   </div>
                                                        <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="1994"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/41858.jpg"
@@ -6986,7 +8639,12 @@
 
   </div>
                                                          <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2024"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/62886.jpg"
@@ -7009,7 +8667,12 @@
 
   </div>
                                                            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="1987"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/29785.jpg"
@@ -7032,7 +8695,12 @@
 
   </div>
                                                              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="1989"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/193.jpg"
@@ -7055,7 +8723,12 @@
 
   </div>
                                                                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="1992"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1274.jpg"
@@ -7078,7 +8751,12 @@
 
   </div>
                                                                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="1998"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/y8hm88trqygd.jpg"
@@ -7101,7 +8779,12 @@
 
   </div>
                                                                    <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="1988"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/196.jpg"
@@ -7124,7 +8807,12 @@
 
   </div>
                                                                      <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="1990"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/197.jpg"
@@ -7147,7 +8835,12 @@
 
   </div>
                                                                        <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="1995"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/51943.jpg"
@@ -7170,7 +8863,12 @@
 
   </div>
                                                                          <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2007"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/47504.jpg"
@@ -7193,7 +8891,12 @@
 
   </div>
                                                                            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2013"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/40960.jpg"
@@ -7216,7 +8919,12 @@
 
   </div>
                                                                              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1314.jpg"
@@ -7239,7 +8947,12 @@
 
   </div>
                                                                                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2020"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/30877.jpg"
@@ -7262,7 +8975,12 @@
 
   </div>
                                                                                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/203.jpg"
@@ -7285,7 +9003,12 @@
 
   </div>
                                                                                    <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2011"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/102.jpg"
@@ -7308,7 +9031,12 @@
 
   </div>
                                                                                      <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2002"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/205.jpg"
@@ -7331,7 +9059,12 @@
 
   </div>
                                                                                        <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2009"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/202.jpg"
@@ -7354,7 +9087,12 @@
 
   </div>
                                                                                          <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/4570.jpg"
@@ -7377,7 +9115,12 @@
 
   </div>
                                                                                            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2020"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/50365.jpg"
@@ -7400,7 +9143,12 @@
 
   </div>
                                                                                              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2011"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/38448.jpg"
@@ -7423,7 +9171,12 @@
 
   </div>
                                                                                                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1226.jpg"
@@ -7446,7 +9199,12 @@
 
   </div>
                                                                                                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2003"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/6541.jpg"
@@ -7469,7 +9227,12 @@
 
   </div>
                                                                                                    <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2003"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/36640.jpg"
@@ -7492,7 +9255,12 @@
 
   </div>
                                                                                                      <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2000"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/5777.jpg"
@@ -7515,7 +9283,12 @@
 
   </div>
                                                                                                        <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2002"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/24048.jpg"
@@ -7538,7 +9311,12 @@
 
   </div>
                                                                                                          <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2004"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/38375.jpg"
@@ -7561,7 +9339,12 @@
 
   </div>
                                                                                                            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2003"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/130.jpg"
@@ -7584,7 +9367,12 @@
 
   </div>
                                                                                                              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2006"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/3880.jpg"
@@ -7607,7 +9395,12 @@
 
   </div>
                                                                                                                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2007"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/208.jpg"
@@ -7630,7 +9423,12 @@
 
   </div>
                                                                                                                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2011"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/24.jpg"
@@ -7653,7 +9451,12 @@
 
   </div>
                                                                                                                    <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2017"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/3881.jpg"
@@ -7676,7 +9479,12 @@
 
   </div>
                                                                                                                      <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/159.jpg"
@@ -7699,7 +9507,12 @@
 
   </div>
                                                                                                                        <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/12650.jpg"
@@ -7722,7 +9535,12 @@
 
   </div>
                                                                                                                          <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2024"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/63056.jpg"
@@ -7745,7 +9563,12 @@
 
   </div>
                                                                                                                            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2013"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/435.jpg"
@@ -7768,7 +9591,12 @@
 
   </div>
                                                                                                                              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2017"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/382.jpg"
@@ -7791,7 +9619,12 @@
 
   </div>
                                                                                                                                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2009"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/425.jpg"
@@ -7814,7 +9647,12 @@
 
   </div>
                                                                                                                                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2000"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/40421.jpg"
@@ -7837,7 +9675,12 @@
 
   </div>
                                                                                                                                    <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2003"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/786.jpg"
@@ -7860,7 +9703,12 @@
 
   </div>
                                                                                                                                      <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2006"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/52527.jpg"
@@ -7883,7 +9731,12 @@
 
   </div>
                                                                                                                                        <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2014"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/547.jpg"
@@ -7906,7 +9759,12 @@
 
   </div>
                                                                                                                                          <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1640.jpg"
@@ -7929,7 +9787,12 @@
 
   </div>
                                                                                                                                            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2011"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/418.jpg"
@@ -7952,7 +9815,12 @@
 
   </div>
                                                                                                                                              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1753.jpg"
@@ -7975,7 +9843,12 @@
 
   </div>
                                                                                                                                                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/54120.jpg"
@@ -7998,7 +9871,12 @@
 
   </div>
                                                                                                                                                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2024"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/63913.jpg"
@@ -8021,7 +9899,12 @@
 
   </div>
                                                                                                                                                    <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2017"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/7177.jpg"
@@ -8044,7 +9927,12 @@
 
   </div>
                                                                                                                                                      <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="1998"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/7649.jpg"
@@ -8067,7 +9955,12 @@
 
   </div>
                                                                                                                                                        <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2002"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/31271.jpg"
@@ -8090,7 +9983,12 @@
 
   </div>
                                                                                                                                                          <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2004"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1088.jpg"
@@ -8113,7 +10011,12 @@
 
   </div>
                                                                                                                                                            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2012"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/216.jpg"
@@ -8136,7 +10039,12 @@
 
   </div>
                                                                                                                                                              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2016"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/3171.jpg"
@@ -8159,7 +10067,12 @@
 
   </div>
                                                                                                                                                                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2014"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/480.jpg"
@@ -8182,7 +10095,12 @@
 
   </div>
                                                                                                                                                                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2019"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/23794.jpg"
@@ -8205,7 +10123,12 @@
 
   </div>
                                                                                                                                                                    <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2017"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/29524.jpg"
@@ -8228,7 +10151,12 @@
 
   </div>
                                                                                                                                                                      <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2011"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/186.jpg"
@@ -8251,7 +10179,12 @@
 
   </div>
                                                                                                                                                                        <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2012"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/187.jpg"
@@ -8274,7 +10207,12 @@
 
   </div>
                                                                                                                                                                          <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2010"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/25155.jpg"
@@ -8297,7 +10235,12 @@
 
   </div>
                                                                                                                                                                            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2009"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/4280.jpg"
@@ -8320,7 +10263,12 @@
 
   </div>
                                                                                                                                                                              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2013"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/12989.jpg"
@@ -8344,7 +10292,12 @@
 
     </div>
                                                                                                                                                                              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2011"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1048.jpg"
@@ -8367,7 +10320,12 @@
 
   </div>
                                                                                                                                                                                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/66059.jpg"
@@ -8390,7 +10348,12 @@
 
   </div>
                                                                                                                                                                                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2012"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/9638.jpg"
@@ -8413,7 +10376,12 @@
 
   </div>
                                                                                                                                                                                    <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2014"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1075.jpg"
@@ -8436,7 +10404,12 @@
 
   </div>
                                                                                                                                                                                      <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2004"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/31272.jpg"
@@ -8459,7 +10432,12 @@
 
   </div>
                                                                                                                                                                                        <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2003"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/37841.jpg"
@@ -8482,7 +10460,12 @@
 
   </div>
                                                                                                                                                                                          <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2005"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/22891.jpg"
@@ -8505,7 +10488,12 @@
 
   </div>
                                                                                                                                                                                            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2017"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1015.jpg"
@@ -8528,7 +10516,12 @@
 
   </div>
                                                                                                                                                                                              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2008"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/47153.jpg"
@@ -8551,7 +10544,12 @@
 
   </div>
                                                                                                                                                                                                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="2012"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/850.jpg"
@@ -8574,7 +10572,12 @@
 
   </div>
                                                                                                                                                                                                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2000"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1061.jpg"
@@ -8597,7 +10600,12 @@
 
   </div>
                                                                                                                                                                                                    <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="1999"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/24056.jpg"
@@ -8620,7 +10628,12 @@
 
   </div>
                                                                                                                                                                                                      <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2002"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1449.jpg"
@@ -8643,7 +10656,12 @@
 
   </div>
                                                                                                                                                                                                        <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2005"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/24170.jpg"
@@ -8666,7 +10684,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="serial"
+  data-genre="sci-fi"
+  data-year="2026"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/13043-series.jpg"
@@ -8694,15 +10717,15 @@
          target="_blank">
          odc.4
       </a>
-            <a href="https://jessicayeahcatch.com/access/eyJpdiI6IjZ5Q2ZtSkl2MHFTeGkxV2Q1Ny9EWlE9PSIsInZhbHVlIjoibFZVdWdTVFpkZ2lRN21ZdFhLdnp0Mm5JNENDVEdzdHVjRWNGVEVqQVk0VnA2YlVBckNpelVjYnpjMzJJNm9GaThXRnoveDlSM0dCUTVrZjVRaFM5ZGM4YjV6S2I2YUthbE0xVFI5WjRQNlk9IiwibWFjIjoiZDRhYTFiZWUyZWMxY2ViYmM4MTA5NzRjODJmMzg5YTI4OGE2ZGZkNzk4NWM1NzQ1NTM4ZTQxZTMxMWJiOGQ3NiIsInRhZyI6IiJ9?o=1"
+            <a href="https://jessicayeahcatch.com/e/jjc4kbbmbrkq"
          target="_blank">
          odc.5
       </a>
-            <a href="https://jessicayeahcatch.com/access/eyJpdiI6Ikh1dWQ1T0hLZWoxVVc5QW1JTmRnY2c9PSIsInZhbHVlIjoiaTErUlEwV3hFVkZvTkY4eVpIWUxMd0hoeXNNV1IveFlCOThOYlIwK0FmTVNUZTdzNFo0TkVua1VuWkt6WW1SLzJKWUtDOUNoV2Q0ZDJZUUlEblRNaXZjSG8yeEp5Tjh3N0FxajhnRFBVcWc9IiwibWFjIjoiODExMjNmZDgwNzM3YzJiYjJiOTVjNzcyNzFiMjZiNTE5YTllMGQ5NThjNDllOGE4MzA2MzA3MmJlNTBmYTUyNiIsInRhZyI6IiJ9?o=1"
+            <a href="https://jessicayeahcatch.com/e/wzjrxjdmh6f4"
          target="_blank">
          odc.6
       </a>
-            <a href="https://jessicayeahcatch.com/access/eyJpdiI6ImtldndWcmtJRTN1eHUxVEdna1NNU3c9PSIsInZhbHVlIjoiLzJkdldUTVJ6NHY4TTlYTlUxa05RbVhTWHUrNytTMnlpRzc5VEUzdXZlYjV1cURxcklQNCtzUmwvSVdiTHdLRTdKVUlkRytnUE40RUh1Viswd0F1bVJDWk5kSU1jQTBSVENsMU9vMDJaRXc9IiwibWFjIjoiODdjNGI1ODQ4OWY5ZDdhZjVhNmQwNmViYTJjODE5YjZkN2JjZTE3ODJhNjMwNjVkYzAwNmUyYzhhMmE5NTkyZSIsInRhZyI6IiJ9?o=1"
+            <a href="https://jessicayeahcatch.com/e/jhpp3al0lwfe"
          target="_blank">
          odc.7
       </a>
@@ -8717,7 +10740,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/53831.jpg"
@@ -8740,7 +10768,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="komedia"
+  data-year="2021"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1417.jpg"
@@ -8762,8 +10795,41 @@
    
 
   </div>
+                   <!-- FILM 119 -->
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="1984"
+>
+
+    <img
+      src="https://ekino-tv.pl/static/normal/5nf7jziz92lg.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Niekończąca się opowieść</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://sb1254w9megshle.org/e/eovyux45wprz"
+         target="_blank">
+         jessicayeahcatch
+      </a>
+
+    </div>
+
+   
+
+  </div>
                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="1990"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/6238.jpg"
@@ -8775,7 +10841,7 @@
 
     <div class="watch-links">
 
-      <a href="https://jessicayeahcatch.com/access/eyJpdiI6IlFVczVwWWxyTktuTTJBZExMVWFCQ1E9PSIsInZhbHVlIjoic1l1U1dMbFVmemQwTlNCTEcvN0dDZ1VGL2VDSDQ5MW80eXliY3lmbG9ORTBGakxnaGJ3OEtIQ3VKWU4rbnJMZFpueUo1bmxwbCtneEttVkVkYlRPQkdudXJPbnhKcFJxdlF6RzJsWVdHQVk9IiwibWFjIjoiYmE1NzIzZGJlNGNjNTM5NGFlNzA5NjJkOWQ2NjFmOGY4OWJhM2MwMDc5NzA0Y2M4MTZjYWQ1ODE2MzE3YjU2MyIsInRhZyI6IiJ9?o=1"
+      <a href="https://voe.sx/e/0abiqi7m7xct"
          target="_blank">
          jessicayeahcatch
       </a>
@@ -8785,8 +10851,155 @@
    
 
   </div>
+                   <!-- FILM 119 -->
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2001"
+>
+
+    <img
+      src="https://filman.cc/public/static/poster/big/25748.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>W krainie Niekończącej się opowieści: Część 1</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://jessicayeahcatch.com/e/uacstq5nojqy"
+         target="_blank">
+         jessicayeahcatch
+      </a>
+
+    </div>
+
+   
+
+  </div>
+                     <!-- FILM 119 -->
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2001"
+>
+
+    <img
+      src="https://filman.cc/public/static/poster/big/41267.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>W krainie Niekończącej się opowieści: Część 2</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://jessicayeahcatch.com/e/rkurjbb1tdhh"
+         target="_blank">
+         jessicayeahcatch
+      </a>
+
+    </div>
+
+   
+
+  </div>
+                   <!-- FILM 119 -->
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="1994"
+>
+
+    <img
+      src="https://filman.cc/public/static/poster/big/39598.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Niekończąca się opowieść III: Ucieczka z krainy Fantazji</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://voe.sx/e/lwxukf4huqrk"
+         target="_blank">
+         jessicayeahcatch
+      </a>
+
+    </div>
+
+   
+
+  </div>
+                 <!-- FILM 119 -->
+  <div
+  class="watch-card"
+  data-type="serial"
+  data-genre="bajka"
+  data-year="2023"
+>
+
+    <img
+      src="https://filman.cc/public/static/poster/big/10117-series.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Obłędny Cyfrowy Cyrk</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://jessicayeahcatch.com/e/csialq2pivqu"
+         target="_blank">
+         odc.1
+      </a>
+            <a href="https://jessicayeahcatch.com/e/4h8hoplkfmcp"
+         target="_blank">
+         odc.2
+      </a>
+            <a href="https://jessicayeahcatch.com/e/gvxb2qgd8h0b"
+         target="_blank">
+         odc.3
+      </a>
+            <a href="https://jessicayeahcatch.com/e/1qydyssuetmi"
+         target="_blank">
+         odc.4
+      </a>
+            <a href="https://www.cda.pl/video/3002500223"
+         target="_blank">
+         odc.5
+      </a>
+            <a href="https://www.cda.pl/video/3002504771"
+         target="_blank">
+         odc.6
+      </a>
+            <a href="https://www.cda.pl/video/30025112ee"
+         target="_blank">
+         odc.7
+      </a>
+            <a href="https://www.cda.pl/video/3002514787"
+         target="_blank">
+         odc.8
+      </a>
+
+
+
+    </div>
+
+   
+
+  </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="serial"
+  data-genre="fantasy"
+  data-year="2026"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/6167-series.jpg"
@@ -8845,7 +11058,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2023"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/uyzj8hbc8ia1.jpg"
@@ -8867,8 +11085,97 @@
    
 
   </div>
+                   <!-- FILM 119 -->
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="1996"
+>
+
+    <img
+      src="https://filman.cc/public/static/poster/big/1273.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Mission: Impossible</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://jessicayeahcatch.com/e/ecfxitjchn40"
+         target="_blank">
+         jessicayeahcatch
+      </a>
+
+    </div>
+
+   
+
+  </div>
+                   <!-- FILM 119 -->
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2000"
+>
+
+    <img
+      src="https://filman.cc/public/static/poster/big/25788.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Mission: Impossible 2</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://jessicayeahcatch.com/e/dbvdjtj0idur"
+         target="_blank">
+         jessicayeahcatch
+      </a>
+
+    </div>
+
+   
+
+  </div>
+                     <!-- FILM 119 -->
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2006"
+>
+
+    <img
+      src="https://filman.cc/public/static/poster/big/39583.jpg"
+      alt="Film">
+
+    <div class="text">
+      <h3>Mission: Impossible III</h3>
+    </div>
+
+    <div class="watch-links">
+
+      <a href="https://jessicayeahcatch.com/e/q9vuepcwrhou"
+         target="_blank">
+         jessicayeahcatch
+      </a>
+
+    </div>
+
+   
+
+  </div>
                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2011"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/50044.jpg"
@@ -8891,7 +11198,12 @@
 
   </div>
                    <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2015"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/40592.jpg"
@@ -8914,7 +11226,12 @@
 
   </div>
                      <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2018"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/1671.jpg"
@@ -8937,7 +11254,12 @@
 
   </div>
                        <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="akcja"
+  data-year="2023"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/59887.jpg"
@@ -8960,7 +11282,12 @@
 
   </div>
                          <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2014"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/25600.jpg"
@@ -8983,7 +11310,12 @@
 
   </div>
                            <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2017"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/582.jpg"
@@ -9006,7 +11338,12 @@
 
   </div>
                              <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2004"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/23275.jpg"
@@ -9029,7 +11366,12 @@
 
   </div>
                                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="fantasy"
+  data-year="2017"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/3032.jpg"
@@ -9052,7 +11394,12 @@
 
   </div>
                                  <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="1999"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/5606.jpg"
@@ -9075,7 +11422,12 @@
 
   </div>
                                    <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="1985"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/3890.jpg"
@@ -9098,7 +11450,12 @@
 
   </div>
                                      <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="1989"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/3889.jpg"
@@ -9121,7 +11478,12 @@
 
   </div>
                                        <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="sci-fi"
+  data-year="1990"
+>
 
     <img
       src="https://filman.cc/public/static/poster/big/3888.jpg"
@@ -9144,7 +11506,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="bajka"
+  data-year="2020"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/7v0068rvihyo.jpg"
@@ -9167,7 +11534,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2025"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/9ng37cj3ho00.jpg"
@@ -9190,7 +11562,12 @@
 
   </div>
                <!-- FILM 119 -->
-  <div class="watch-card">
+  <div
+  class="watch-card"
+  data-type="film"
+  data-genre="familijny"
+  data-year="2025"
+>
 
     <img
       src="https://ekino-tv.pl/static/normal/6fugxvx7e1xh.jpg"
@@ -9214,10 +11591,14 @@
   </div>
 
 
-</div>
+
+
+
+
 </section>
 
 <script src="watch.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
