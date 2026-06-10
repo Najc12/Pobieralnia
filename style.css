@@ -37,12 +37,14 @@ body::before {
 }
 
 /* NAVBAR */
+
 .navbar {
   height: 100px;
   width: 100%;
 
   background:
-    linear-gradient(to bottom, #fff 0%, #eee 45%, #ff003c 55%, #990000 100%);
+    linear-gradient(to bottom, #d8d8d8 0%, #d8d8d8 45%, #ff003c 55%, #990000 100%);
+    
 
   display: flex;
   justify-content: space-between;
@@ -1667,13 +1669,17 @@ nav a,
 }
 
 #forest-bg{
-  position:absolute;
-  width:110%;
-  height:110%;
-  object-fit:cover;
+  position: fixed;
 
-  left:-5%;
-  top:-5%;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  left: 0;
+  top: 0;
 
   transition:transform .2s linear,
              filter 1s ease;
@@ -1694,95 +1700,112 @@ body::after {
 .light-theme::after {
   background: rgba(0,0,0,0.15);
 }
-
+#background-layer {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
 /* =====================================
-   CRAFTEA MOBILE FIX 2026
+   TELEFONY - POPRAWKI
 ===================================== */
 
-@media (max-width:768px){
-
-  body{
-    background-position:center top;
-    background-size:cover;
-  }
-
-  .navbar{
-    flex-direction:column;
-    min-height:auto;
-    padding:15px;
-    gap:10px;
-  }
-
-  nav{
-    width:100%;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:8px;
-  }
-
-  nav a{
-    font-size:14px;
-  }
-
-  #home h2{
-    font-size:60px;
-    text-align:center;
-  }
-
-  #home p{
-    font-size:22px;
-    text-align:center;
-  }
-
-  .section{
-    padding:20px !important;
-    min-height:auto;
-  }
-
-  .news-grid,
-  .recruitment-grid,
-  .watch-grid,
-  .games-grid,
-  .download-grid,
-  .gallery{
-    grid-template-columns:1fr !important;
-  }
-
-  .watch-card img,
-  .game-card img,
-  .gallery img,
-  .mod-link img{
-    height:auto;
-    object-fit:contain;
-  }
-
-  .movie-search{
-    width:100%;
-    max-width:100%;
-  }
-
-  footer{
-    font-size:14px;
-  }
+/* zabezpieczenie przed białymi paskami */
+html,
+body {
+  
+  max-width: 100%;
 }
-/* Telefony */
-@media (max-width:768px){
 
-  .navbar{
-    position: sticky !important;
-    top:0 !important;
+/* wszystkie obrazki nie mogą wychodzić poza ekran */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* TELEFONY */
+@media (max-width: 768px) {
+
+  /* GALERIA */
+  .gallery {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  #home h2{
-    font-size:60px !important;
+  /* AKTUALNOŚCI */
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  .news-grid,
-  .recruitment-grid,
-  .watch-grid,
-  .games-grid,
-  .download-grid,
-  .gallery{
-    grid-template-columns:1fr !important;
+  /* REKRUTACJA */
+  .recruitment-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
+
+  /* POBIERALNIA */
+  .download-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* OGLĄDANKO */
+  .watch-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* GRANKO */
+  .games-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* mniejsze odstępy */
+  .section {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  /* lepsze wyświetlanie tła */
+  body {
+    background-position: center top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #000;
+  }
+
+}
+#flag-toggle {
+  position: fixed;
+
+  top: 8px;
+  right: 50px;
+
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(0,0,0,0.45);
+
+  color: white;
+  font-size: 14px;
+
+  cursor: pointer;
+
+  z-index: 9999;
+
+  backdrop-filter: blur(10px);
+
+  border: 2px solid cyan;
+
+  box-shadow: 0 0 8px cyan;
+
+  transition: 0.3s;
+}
+
+#flag-toggle:hover {
+  transform: scale(1.1);
+
+  box-shadow:
+    0 0 15px cyan,
+    0 0 30px cyan;
 }
