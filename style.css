@@ -1708,104 +1708,168 @@ body::after {
   pointer-events: none;
 }
 /* =====================================
-   TELEFONY - POPRAWKI
+   TELEFONY AUTO RESPONSIVE
 ===================================== */
 
-/* zabezpieczenie przed białymi paskami */
-html,
-body {
-  
-  max-width: 100%;
+@media (max-width:768px){
+
+  .section{
+    padding:15px !important;
+  }
+
+  /* SIATKI */
+
+  .gallery,
+  .news-grid,
+  .download-grid,
+  .watch-grid,
+  .games-grid,
+  .recruitment-grid{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap:10px;
+  }
+
+  /* KAFELKI */
+
+  .box,
+  .news-card,
+  .watch-card,
+  .game-card,
+  .recruitment-card{
+    width:100%;
+    min-width:0;
+    padding:10px !important;
+    overflow:hidden;
+  }
+
+  /* OBRAZKI */
+
+  .gallery img,
+  .mod-link img,
+  .watch-card img,
+  .game-card img{
+    width:100%;
+    height:auto !important;
+    aspect-ratio:1/1;
+    object-fit:cover;
+  }
+
+  /* TŁO TELEFON */
+
+  body{
+    background-size:100% 100% !important;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-color:#000;
+  }
+
+  #forest-bg{
+    width:100vw;
+    height:100vh;
+    object-fit:fill;
+    object-position:center center;
+  }
+
+  /* TEKST */
+
+  h1{
+    font-size:clamp(28px,6vw,48px);
+  }
+
+  h2{
+    font-size:clamp(24px,5vw,40px) !important;
+  }
+
+  h3{
+    font-size:clamp(16px,4vw,24px);
+  }
+
+  p,
+  a,
+  button,
+  input,
+  textarea,
+  select{
+    font-size:clamp(12px,3vw,18px);
+  }
+
+  #home h2{
+    font-size:clamp(40px,12vw,110px);
+    text-align:center;
+  }
+
+  #home p{
+    font-size:clamp(16px,4vw,30px);
+  }
+
+  /* MENU */
+
+  .navbar{
+    height:auto;
+    padding:15px;
+    flex-direction:column;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  /* WYSZUKIWARKA */
+
+  .movie-search{
+    width:100%;
+    max-width:100%;
+  }
+
+  /* NAPRAWA TEKSTU W KAFELKACH */
+
+  .news-card h3,
+  .watch-card h3,
+  .game-card h3,
+  .recruitment-card h3,
+  .text h3{
+    font-size:clamp(12px,3vw,18px) !important;
+    line-height:1.3;
+    text-align:center;
+    overflow-wrap:break-word;
+    word-break:break-word;
+  }
+
+  .news-card p,
+  .watch-card p,
+  .game-card p,
+  .recruitment-card p,
+  .short-text,
+  .full-text{
+    font-size:clamp(11px,2.7vw,16px) !important;
+    line-height:1.4;
+    overflow-wrap:break-word;
+    word-break:break-word;
+  }
+
+  .news-button,
+  .recruit-button,
+  .recruit-toggle,
+  .movie-links a,
+  .game-links a{
+    font-size:clamp(10px,2.5vw,14px) !important;
+    padding:8px !important;
+  }
+
+  *{
+    overflow-wrap:break-word;
+    word-break:break-word;
+  }
 }
 
-/* wszystkie obrazki nie mogą wychodzić poza ekran */
-img {
-  max-width: 100%;
-  height: auto;
-}
+/* DESKTOP */
 
-/* TELEFONY */
-@media (max-width: 768px) {
-
-  /* GALERIA */
-  .gallery {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  /* AKTUALNOŚCI */
-  .news-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  /* REKRUTACJA */
-  .recruitment-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  /* POBIERALNIA */
-  .download-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  /* OGLĄDANKO */
-  .watch-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  /* GRANKO */
-  .games-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  /* mniejsze odstępy */
-  .section {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-  }
-
-  /* lepsze wyświetlanie tła */
-  body {
-    background-position: center top;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color: #000;
-  }
-
-}
-#flag-toggle {
-  position: fixed;
-
-  top: 8px;
-  right: 50px;
-
-  width: 30px;
-  height: 30px;
-
-  border: none;
-  border-radius: 50%;
-
-  background: rgba(0,0,0,0.45);
-
-  color: white;
-  font-size: 14px;
-
-  cursor: pointer;
-
-  z-index: 9999;
-
-  backdrop-filter: blur(10px);
-
-  border: 2px solid cyan;
-
-  box-shadow: 0 0 8px cyan;
-
-  transition: 0.3s;
-}
-
-#flag-toggle:hover {
-  transform: scale(1.1);
-
-  box-shadow:
-    0 0 15px cyan,
-    0 0 30px cyan;
+.news-card h3,
+.watch-card h3,
+.game-card h3,
+.recruitment-card h3{
+  font-size:clamp(14px,2vw,28px);
 }
