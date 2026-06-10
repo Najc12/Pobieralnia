@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         themeBtn.textContent = "☀️";
         localStorage.setItem("theme", "light");
       } else {
-        themeBtn.textContent = "🌙";
+        themeBtn.textContent = "☾";
         localStorage.setItem("theme", "dark");
       }
 
@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
 
 // LIGHTBOX
 const lightbox = document.getElementById("lightbox");
